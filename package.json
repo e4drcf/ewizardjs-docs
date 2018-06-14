@@ -1,0 +1,20 @@
+{
+  "name": "ewizardjs-doc",
+  "version": "1.0.0",
+  "description": "eWizard.js documentation site",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "vuepress": "^0.10.1"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "author": "Anna Shavurska <a.shavurska@viseven.com>",
+  "license": "ISC"
+}
