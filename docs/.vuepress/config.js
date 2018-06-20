@@ -31,11 +31,6 @@ module.exports = {
           'create',
           'install',
           'publish'
-        ],
-        '/': [
-          '',
-          'contact',
-          'about'
         ]
       },
       // TODO: Add Github link
