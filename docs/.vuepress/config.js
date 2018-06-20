@@ -43,5 +43,5 @@ module.exports = {
       docsBranch: 'master',
       editLinks: true,
       editLinkText: 'Help us improve this page!'
-    }
+    } 
   }
