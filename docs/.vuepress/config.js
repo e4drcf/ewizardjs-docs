@@ -24,6 +24,7 @@ module.exports = {
         '/documentation/': [
           '',
           'attributes',
+          ['CLI-commands','CLI commands'],
           'component'
         ],
         '/release-notes/': [
