@@ -69,7 +69,7 @@ In the example above are defined two chapters with IDs `favorite` and `other`. F
 
 `Storyboard` is an array which defines chapters available for view during the presentation and their order. Only chapters listed in `storyboard` will be shown in presentation.
 
-**Example**
+*Example*
 
 ``` js
 "storyboard": [
@@ -106,8 +106,8 @@ Slides and chapters can be skiped during viewing a presentation. To mark the sli
         ]
     },
     "storyboard": [
-    "favorite",
-    "!other"
+        "favorite",
+        "!other"
     ]
 }
 
