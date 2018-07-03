@@ -24,7 +24,8 @@ module.exports = {
         '/documentation/': [
           '',
           'attributes',
-          'component'
+          'component',
+          ['structure', 'Presentation structure']
         ],
         '/release-notes/': [
           '',
