@@ -15,20 +15,20 @@ Slide is a single page of presentation and separates content structurally. You c
 
 Let's consider the example:
  ```js{2,6,10}
-    "slides": {
-        "vanilaCookie": {
-            "name": "Vanilla Cookies",
-            "template": "slides/vanilaCookie/index.vue"
-        },
-        "chocolateCookie": {
-            "name": "Chocolate Cookies",
-            "template": "slides/chocolateCookie/index.vue"
-        }
-        "biscuit": {
-            "name": "Chocolate Cookies",
-            "template": "slides/biscuit/index.vue"
-        }
+"slides": {
+    "vanilaCookie": {
+        "name": "Vanilla Cookies",
+        "template": "slides/vanilaCookie/index.vue"
+    },
+    "chocolateCookie": {
+        "name": "Chocolate Cookies",
+        "template": "slides/chocolateCookie/index.vue"
     }
+    "biscuit": {
+        "name": "Chocolate Cookies",
+        "template": "slides/biscuit/index.vue"
+    }
+}
 ```
 Here, keys `vanilaCookie`, `chocolateCookie` and `biscuit` specifies the ID of the slides, each object has `name` property wich will be displayed as slide name in eWizard editor, and `template` with the path to vue component that represents a presentation page.
 
@@ -100,9 +100,9 @@ Slides and chapters can be skiped during viewing a presentation. To mark the sli
             "chocolateCookie"
         ],
         "other": {
-        "name": "Other Cookies",
-        "content": [
-            "biscuit"
+            "name": "Other Cookies",
+            "content": [
+                "biscuit"
         ]
     },
     "storyboard": [
