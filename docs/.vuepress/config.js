@@ -25,7 +25,8 @@ module.exports = {
           '',
           'attributes',
           'component',
-          'Settings'
+          'Settings',
+          'Installation'
         ],
         '/release-notes/': [
           '',
