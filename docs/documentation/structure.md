@@ -8,7 +8,7 @@ In order to organize the presentation structure, eWizardjs introduces concepts o
 
 ## Slides
 
-Slide is a single page of presentation and separates content structurally. You can manage slides with `wiz slide  [slideName]` command or edit *structure.json* manualy. `Slides` object contains list of the presentation all slides. Each key in `slides` object is unique ID of the slide. Each slide has such properties:
+Slide is a single page of presentation and separates content structurally. You can manage slides with `wiz slide [slideName]` command or edit *structure.json* manually. `Slides` object contains list of the presentation all slides. Each key in `slides` object is unique ID of the slide. Each slide has such properties:
  
  - `name` - the slide readable name;
  - `template` - a reference to vue component associated with the slide.
@@ -30,7 +30,7 @@ Let's consider the example:
     }
 }
 ```
-Here, keys `vanilaCookie`, `chocolateCookie` and `biscuit` specifies the ID of the slides, each object has `name` property wich will be displayed as slide name in eWizard editor, and `template` with the path to vue component that represents a presentation page.
+Here, keys `vanilaCookie`, `chocolateCookie` and `biscuit` specifies the ID of the slides, each object has `name` property which will be displayed as slide name in eWizard editor, and `template` with the path to vue component that represents a presentation page.
 
 ::: tip
 If there is need to create several slides with use of same vue component, they should have different IDs, but same `template` value.
@@ -79,13 +79,13 @@ In the example above are defined two chapters with IDs `favorite` and `other`. F
 ```
 
 ::: tip
-eWizardjs counts chapters that are not included into `storyboard` as a hidden. It is not possible open such chapters swiping the presentation as usually. Chapter can be accesssd only with use of direct navigation to its slides. However, you can swipe in between the slides within the hidden chapter.
+eWizardjs counts chapters that are not included into `storyboard` as a hidden. It is not possible open such chapters swiping the presentation as usually. Chapter can be accessed only with use of direct navigation to its slides. However, you can swipe in between the slides within the hidden chapter.
 ::: 
 
 
 ### Disabled slides and chapters.
 
-Slides and chapters can be skiped during viewing a presentation. To mark the slide or chapter as disabled, inside the chaptrs' <code>content</code> (to disable the slide) or `storyboard` (to disable the chapter) add the `!` symbol in front of desirable item.
+Slides and chapters can be skipped during viewing a presentation. To mark the slide or chapter as disabled, inside the chapters' <code>content</code> (to disable the slide) or `storyboard` (to disable the chapter) add the `!` symbol in front of desirable item.
 
 *Example*
 
@@ -113,6 +113,6 @@ Slides and chapters can be skiped during viewing a presentation. To mark the sli
 
 ```
 
-In the example above `vanilaCookie` slide and chapter `other` marked as  disabled, and will be skiped by engine while viewng the presentation.
+In the example above `vanilaCookie` slide and chapter `other` marked as  disabled, and will be skipped by engine while viewing the presentation.
 
-Disabling the chapters or slides can be useful if you are going remove them temporary from the presentation flow whithout modifying the acualt order of slides demonstration. In this case you can easly recover them in future, by removing `!` symbol.
+Disabling the chapters or slides can be useful if you are going remove them temporary from the presentation flow without modifying the actual order of slides demonstration. In this case you can easily recover them in future, by removing `!` symbol.
