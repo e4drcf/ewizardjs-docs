@@ -4,7 +4,7 @@ For navigation in the eWizardjs presentation is responsible Navigator module. Na
 
 **Usage**
 
-The Navigator instance is assigned as a `$navigator` property to the **Vue** instance, so you can refer to its methods inside the components via `this` keyword:
+The Navigator instance is assigned as a property to the **Vue** instance, so you have access to the Navigator instance as `$navigator`. You can therefore call its methods using `this` keyword:
 
 ```js
 this.$navigator
@@ -63,6 +63,8 @@ In the example above is defined horizontal navigation by slides (performed on _s
 - **`onenter(handler)`** - register subscriber function which is executed each time when `slideenter` event occurs. The `slideenter` published right after user opens a slide, and DOM is being updated by the browser.
 
 - **`onleave(handler)`** - register subscriber function which is executed each time when `slideleave` event occurs. The `slideleave` published when user leaves the current slide, before slide leaving animation is executed.
+
+Note that Navigator events are programmatic and cannot be subscribed using addEventListener method. Behind the scene, Navigator adds the event handlers to the array, and whenever the some state occurs(which considered as event), Navigator runs all handlers from the arrays.
 
 **Arguments**
 
@@ -142,7 +144,7 @@ methods:{
 
 ## Locking the navigation
 
-Navigator provides the set of methods which allows you to deny the navigation from the current slide. The locking methods deny the navigation by the navigation gestures, as well as programmatic navigation. That said, you can still go to locked slide' by forcing [goTo](#programmatic-navigation).
+Navigator provides the set of methods which allows you to restrict the navigation from the current slide. The locking methods deny the navigation by the navigation gestures, as well as programmatic navigation. That said, you can still go to locked slide' by forcing [goTo](#programmatic-navigation).
 
 - **`lockNext()`** - lock the navigation to the **next** slide
 - **`lockPrev()`** - lock the navigation to the **previous** slide
@@ -200,11 +202,11 @@ mounted(){
 
 ## Flow
 
-The presentation structure can not be modified whenever user view the slide. For these purposes can be used custom flow. Custom flow allows to create new demonstration flow dynamically by reusing the existing slides from the presentation. That's mean during the presentation will be available only the slides from the new flow. 
+The presentation structure can not be modified whenever user view the slide. So to change the slide`s ordering in presentation can be used custom flow. Custom flow allows to create new demonstration flow dynamically by reusing the existing slides. That's mean during the presentation will be available only the slides from the new flow.
 
 Navigator provides the set of methods to work with flows such as:
 
-- **`setFlow(structureFlow, goToOptions)`** - creates the new presentation flow and set it as a current
+- **`setFlow(structureFlow, goToOptions)`** - creates a new presentation flow and set it as a current one
 
 **Arguments**
 
@@ -218,7 +220,7 @@ Navigator provides the set of methods to work with flows such as:
 - **`resetFlow()`** - removes the current flow and defines the previous one as a current. If the previous flow do not exist, will be used structure.json file
 - **`reset()`** - removes the current flow and defines the presentation structure as a current flow
 
-Note that you can create the flow within already created one. In this case you can back the previous flow by using `resetFlow` method.
+Note that you can create the flow within already created one and fill it with another slides. In this case you can back the previous flow by using `resetFlow` method.
 
 **Example**
 
