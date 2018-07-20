@@ -10,66 +10,119 @@ After creating a new template by ewizard CLI you have a possibility to view its 
      component
 ```
 
-To view the file with settings go to the *template folder/.ewizard/settings.json* file.
+To view the file with settings go to the *settings.json* file.
 
-## General settings
+## Email settings
 
-Every template's settings have the **_'content'_** object which stores the following fields:
 
-* The **_'type'_** field contains an unique type for every template. By default, it is the name of the current template. 
-* The **_'subtype'_** field is used only for email template. 
+After initialization of the email template open the current folder with your email project and find the json file with described settings.
+``` json
+{
+  "name": "myEmail",
+	"id": "81ta-KDyV-v811-HT3t",
+	"localization": {
+		"current": "en",
+		"original": "",
+		"langs": [
+			"en"
+		],
+		"country": ""
+	},
+	"app": "./App.vue",
+	"targetClm": "irep"
+}
+```
+This table displays the information for every field in the *settings.json* file.
 
-::: tip Note
-In **survey** template are described only general settings.
-:::
-
-## Email template's settings
-
-This is the basic settings after initialization of the **email** template. 
+| Field name   | Сontent                                                                             |
+|:-------------|:------------------------------------------------------------------------------------| 
+|    name      | the name of the email template                                                      |
+|      id      | the unique id of the created email                                                  |   
+| localization | information about current localization, languages and country of the email template |
+| app          | the main root file, where a general logic is described                              |
+| targetClm    | the name of clm for which the email template was created                            |
+   
+## Edetailer settings
 
 ``` json
 {
-  "content": {
-    "type": "email",
-    "subtype": "layout"
+  "name": "testEdetailer",
+  "id": "81ta-KDyV-v811-HT3t",
+  "localization": {
+    "current": "en",
+    "original": "",
+    "langs": ["en"],
+    "country": ""
   },
-  "path": {
-    "blocks": "common/blocks-library", 
-    "localBlocks": "common/blocks", 
-    "localComponents": "common/components",
-    "bundle": "build/dev/app.js", 
-    "rootComponent": "App.vue",
-    "slides": "slides",
-    "themes": "themes"
+  "app": "./App.vue",
+  "crossChapterSwipe": true,
+  "targetClm": "irep",
+  "orientation": "landscape",
+  "browserslist": ["last 2 ios version", "last 2 android version"],
+  "navigation": {
+    "swipe": {
+      "slide": {
+        "direction": "horizontal",
+        "touchesCount": 1,
+        "enabled": true
+      },
+      "chapter": {
+        "direction": "horizontal",
+        "touchesCount": 1,
+        "enabled": false
+      }
+    }
   }
 }
 ```
+This code shows the default setting for created edetailer template. 
 
-In addition to the **_'content'_** object there is a **_'path'_** object, which contains the next fields:
+| Field name       | Сontent                                                                                 |
+|:-----------------|:----------------------------------------------------------------------------------------| 
+| name             | the name of the edetailer template                                                      |
+| id               | the unique id of the created edetailer                                                  |   
+| localization     | information about current localization, languages and country of the edetailer template |
+| app              | the main root file, where a general logic is described                                  |
+| crossChapterSwip | boolean value which allows to swipe between chapters                                    |
+| targetClm        | the name of clm for which the edetailer template was created                            |
+| orientation      | the current format of the orientation                                                   |   
+| browserslist     | ...                                                                                     |
+| navigation       | the navigation actions through the slides and chapters                                  |
 
-* The **blocks** - describes the way to the blocks (fragments) library which can be added on the email;
-* The **localBlocks** - stores the way to the blocks that are currently used on the email;
-* The **localComponents** - contains the location way to the local components which can be used on the email template;
-* The **bundle** - 
-* The **rootComponent** - defines the main root file, where is described a general logic;
-* The **slides** - the folder with slides of the content;
-* The **themes** - the folder with email's themes.
 
-
-## Component and Edetailer templates' settings
-
-Settings.json file of the **component** and **edetailer** templates in addititon to the **_'content'_** object has the **_'plugin'_** object which stores only one field: 
-
-* **eslint** - contains a boolean value which enable or disable an utility for finding a problematic patterns or code that doesn’t adhere to the main style guidelines.
+## Survey settings
 
 ``` json
 {
-  "content": {
-    "type": "component",
-    "subtype": ""
+  "name": "testSurveyTemplate",
+  "id": "81ta-KDyV-v811-HT3t",
+  "localization": {
+    "current": "en",
+    "original": "",
+    "langs": [
+      "en"
+    ]
   },
-  "plugins": {
-    "eslint": true
+  "app": "./App.vue",
+  "crossChapterSwipe": true,
+  "targetClm": "irep",
+  "navigation": {
+    "swipe": {
+      "slide": {
+        "direction": "horizontal",
+        "touchesCount": 1,
+        "enabled": true
+      },
+      "chapter": {
+        "direction": "horizontal",
+        "touchesCount": 1,
+        "enabled": false
+      }
+    }
   }
 }
 ```
+The survey's settings are similar to the edetailer settings, so there is no reason to describe them.  
+
+
+
