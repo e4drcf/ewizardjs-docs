@@ -1,10 +1,10 @@
 ## Navigator
 
-For navigation in the eWizardjs presentation is responsible Navigator module. Navigator is part of the eWizardjs engine and is added to the presentations and surveys by default. Navigator uses [structure.json]() file which denotes standard slide demonstration flow. Having said that you can still create the new demonstration [flow](#flow) dynamically while viewing a presentation.
+For navigation in the eWizardjs presentation is responsible Navigator module. Navigator is part of the engine and is available in the presentations and surveys by default. Navigator uses [structure.json](documentation/structure/) file which denotes standard slide demonstration flow. Having said that you can still create the new demonstration [flow](#flow) dynamically while viewing a presentation.
 
 **Usage**
 
-The Navigator instance is assigned as a property to the **Vue** instance, so you have access to the Navigator instance as `$navigator`. You can therefore call its methods using `this` keyword:
+The Navigator instance is assigned as a property to the **Vue** instance, so you have access to the Navigator via `$navigator`. You can therefore call its methods using `this` keyword:
 
 ```js
 this.$navigator
@@ -12,13 +12,13 @@ this.$navigator
 
 ## Navigator Settings
 
-To set up the Navigator module use presentation [settings.json]() file, that stores navigation gesture settings.
+To set up the Navigator module use presentation [settings.json](documentation/Settings/) file, that stores navigation gesture settings.
 
 ### Cross chapter swipe
 
 By default the transition between the chapters by navigation gestures is disabled. To enable it set `crossChapterSwipe` as `true`.
 
-`settings.json` file:
+`settings.json`:
 ```js
 "crossChapterSwipe": true
 ```
@@ -56,7 +56,7 @@ You can redefine any option in `navigation` object of `settings.json` file. Unde
 	}
 ```
 
-In the example above is defined horizontal navigation by slides (performed on _swipe-left/swipe-right_ gestures) and vertical navigation by chapters(performed on _swipe-down/swipe-up_ gestures)
+In the preceding example is defined horizontal navigation by slides (performed on _swipe-left/swipe-right_ gestures) and vertical navigation by chapters(performed on _swipe-down/swipe-up_ gestures)
 
 ## Navigator' events subscribers
 
@@ -64,7 +64,7 @@ In the example above is defined horizontal navigation by slides (performed on _s
 
 - **`onleave(handler)`** - register subscriber function which is executed each time when `slideleave` event occurs. The `slideleave` published when user leaves the current slide, before slide leaving animation is executed.
 
-Note that Navigator events are programmatic and cannot be subscribed using addEventListener method. Behind the scene, Navigator adds the event handlers to the array, and whenever the some state occurs(which considered as event), Navigator runs all handlers from the arrays.
+Note that Navigator events are programmatic and cannot be subscribed using addEventListener method. Behind the scene, Navigator adds the event handlers to the array, and whenever the some state occurs(which considered as event), Navigator executes all handlers from the arrays.
 
 **Arguments**
 
