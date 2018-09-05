@@ -1,6 +1,6 @@
 # :wrench: Settings
 
-After creating a new template by ewizard CLI you have a possibility to view its basic settings. There are four types of templates which you can create using the **wiz init** command.
+After creating a new template by eWizard CLI you have a possibility to view its basic settings. There are four types of templates which you can create using the **wiz init** command.
 
 ``` {2}
 ? Choose template you want to use: (Use arrow keys)
@@ -10,12 +10,12 @@ After creating a new template by ewizard CLI you have a possibility to view its 
      component
 ```
 
-To view the file with settings go to the *settings.json* file.
+To view the file with settings, open the *settings.json* file.
 
 ## Email settings
 
 
-After initialization of the email template open the current folder with your email project and find the json file with described settings.
+After initialization of the email template, open the current folder with your email project and find the .json file with described settings.
 ``` json
 {
   "name": "myEmail",
@@ -40,7 +40,7 @@ This table displays the information for every field in the *settings.json* file.
 |      id      | the unique id of the created email                                                  |   
 | localization | information about current localization, languages and country of the email template |
 | app          | the main root file, where a general logic is described                              |
-| targetClm    | the name of clm for which the email template was created                            |
+| targetClm    | the name of the clm for which the email template was created                            |
    
 ## Edetailer settings
 
@@ -83,8 +83,8 @@ This code shows the default setting for created edetailer template.
 | id               | the unique id of the created edetailer                                                  |   
 | localization     | information about current localization, languages and country of the edetailer template |
 | app              | the main root file, where a general logic is described                                  |
-| crossChapterSwip | boolean value which allows to swipe between chapters                                    |
-| targetClm        | the name of clm for which the edetailer template was created                            |
+| crossChapterSwip | boolean value which allows swiping between chapters                                     |
+| targetClm        | the name of the clm for which the edetailer template was created                            |
 | orientation      | the current format of the orientation                                                   |   
 | browserslist     | ...                                                                                     |
 | navigation       | the navigation actions through the slides and chapters                                  |
