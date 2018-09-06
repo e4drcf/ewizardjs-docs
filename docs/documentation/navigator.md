@@ -1,10 +1,10 @@
 ## Navigator
 
-For navigation in the eWizardjs presentation is responsible Navigator module. Navigator is part of the engine and is available in the presentations and surveys by default. Navigator uses [structure.json](documentation/structure/) file which denotes standard slide demonstration flow. Having said that you can still create the new demonstration [flow](#flow) dynamically while viewing a presentation.
+For navigation in the eWizardjs project is responsible Navigator module. Navigator is part of the core engine and is available in the presentations and surveys by default. Navigator uses [structure.json](documentation/structure/) file which denotes standard slide demonstration flow. Having said that you can still create the new demonstration [flow](#flow) dynamically while viewing a presentation.
 
 **Usage**
 
-The Navigator instance is assigned as a property to the **Vue** instance, so you have access to the Navigator via `$navigator`. You can therefore call its methods using `this` keyword:
+The Navigator instance is bounded to the instance of **Vue** as `$navigator`. You have access to the Navigator and its methods via `this` context on the **Slide**: 
 
 ```js
 this.$navigator
@@ -18,7 +18,7 @@ To set up the Navigator module use presentation [settings.json](documentation/Se
 
 By default the transition between the chapters by navigation gestures is disabled. To enable it set `crossChapterSwipe` as `true`.
 
-`settings.json`:
+`settings.json` file:
 ```js
 "crossChapterSwipe": true
 ```
@@ -58,34 +58,43 @@ You can redefine any option in `navigation` object of `settings.json` file. Unde
 
 In the preceding example is defined horizontal navigation by slides (performed on _swipe-left/swipe-right_ gestures) and vertical navigation by chapters(performed on _swipe-down/swipe-up_ gestures)
 
-## Navigator' events subscribers
+## Navigator' hooks
 
-- **`onenter(handler)`** - register subscriber function which is executed each time when `slideenter` event occurs. The `slideenter` published right after user opens a slide, and DOM is being updated by the browser.
+- **`onbeforeenter(handler, options)`** - register  subscriber function which is executed each time when `onbeforeenter` event occurs. The `onbeforeenter` is published right after user opens a slide, before start of slides` transition animation. 
 
-- **`onleave(handler)`** - register subscriber function which is executed each time when `slideleave` event occurs. The `slideleave` published when user leaves the current slide, before slide leaving animation is executed.
+- **`onenter(handler, options)`** - register subscriber function which is executed each time when `slideenter` event occurs. The `slideenter` is published when user has opened the slide on transition end.
 
-Note that Navigator events are programmatic and cannot be subscribed using addEventListener method. Behind the scene, Navigator adds the event handlers to the array, and whenever the some state occurs(which considered as event), Navigator executes all handlers from the arrays.
+- **`onbeforleave(handler, options)`** - register subscriber function which is executed each time when `onbeforleave` event occurs. The `onbeforleave` is published when user leaves the current slide, before slide leaving animation start.
+
+- **`onleave(handler, options)`** - register subscriber function which is executed each time when `slideleave` event occurs. The `slideleave` is published when user has leaved the current slide, after end of the slide transition animation.
+
+Note that Navigator events are programmatic and cannot be subscribed using simple **addEventListener** function. Behind the scene, Navigator adds event handlers to the arrays, and whenever the some state occurs (which considered as event), Navigator executes all registered handlers.
 
 **Arguments**
 
-Each method accepts as an argument `handler` function.
+Each method accepts as an argument `handler` function and `options` object.
 
 - **`handler`** _(Function)_ - the function to be executed after event publication. As an argument `handler` receives the object with properties `slide` and `chapter` that contains the `id` of current slide and chapter respectively.
 
-**Example:**
+- **`options`** _(Object)_ 
+    - `global` _(Boolean)_ - if `true` specifies that `handler` function should be registered as global. That's mean, that handler will be invoked on each slide.
+
+**Example**
 
 ```js
 mounted(){
-    this.$navigator.onenter(navigation =>
-        console.log(navigation) // result {slide: "slider1", chapter: "potential"};
-    );
     this.$navigator.onleave(previousNavigation =>
         console.log(previousNavigation) // result {slide: "slider1", chapter: "potential"};
+    );
+
+    this.$navigator.onenter(navigation => {
+         console.log(navigation)
+     },{ global: true } // the handler is registered as global and as result will output the navigation in console on each slide, e.g.{slide:"slider1", chapter: "potential"};
     );
 }
 ```
 
-Note that `onenter` and `onleave` will register your handlers globally, that's mean that handlers will be invoked on each slide.
+### Global hooks
 
 ## Programmatic navigation
 
