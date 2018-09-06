@@ -94,8 +94,6 @@ mounted(){
 }
 ```
 
-### Global hooks
-
 ## Programmatic navigation
 
 Aside from default navigation which is executed via swipe gestures, **Navigator**`s instance provides the set of methods for navigation.
