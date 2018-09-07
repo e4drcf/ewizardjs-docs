@@ -12,7 +12,7 @@ this.$navigator
 
 ## Navigator Settings
 
-To set up the Navigator module use presentation [settings.json](documentation/Settings/) file, that stores navigation gesture settings.
+To set up the Navigator module use presentation [settings.json](Settings.html) file, that stores navigation gesture settings.
 
 ### Cross chapter swipe
 
