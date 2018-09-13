@@ -60,9 +60,9 @@ This means that every component that modifies its data **must emit event `update
     this.$emit('update:prop', newProp);
 ```
 
-## Component properties standard
+## Component properties standard (index.vue)
 
-Vue allows to define component [Props](https://vuejs.org/v2/guide/components-props.html) in a several ways. As a standard ewizardjs use component Props defined as object.
+Vue allows to define component [props](https://vuejs.org/v2/guide/components-props.html) in a several ways. As a standard ewizardjs use component props defined as object.
 
 Props object should look like this:
 
@@ -185,7 +185,7 @@ Props object should look like this:
 ```
 </div>
 
-Aside to well known vue properties for [type check](https://vuejs.org/v2/guide/components-props.html#Type-Checks) or [validation](https://vuejs.org/v2/guide/components-props.html#Prop-Validation) etc, ewizardjs use additional fields for Props declaration, to fit them for editing in eWizard.
+Aside to well known vue properties for [type check](https://vuejs.org/v2/guide/components-props.html#Type-Checks) or [validation](https://vuejs.org/v2/guide/components-props.html#Prop-Validation) etc, ewizardjs use additional fields for props declaration, to fit them for editing in eWizard.
 
 According to the preceding example, the component Prop may be described with the following fields:
 - `label` - specifies the label of component in ewizardjs editor
@@ -197,19 +197,19 @@ According to the preceding example, the component Prop may be described with the
 
 ### Component types
 
-The possible component `actualType` and `subtype` values are defined in `component-types` package as `PropType` and `FileType`. Add it as npm package into the component project:
+The possible component `actualType` and `subtype` values are defined in `component-types` package in `PropType` and `FileType`. Add it as npm package into the component project:
 
 ```bash
-npm i --save git@git.qapint.com:ewizardjs/core/component-types.git
+npm i --save git+ssh://git@git.qapint.com:ewizardjs/core/component-types.git
 ```
-To use `component-types` in Props declarations import it
+To use `component-types` in props declarations import it:
 
 ```js
 import { PropType, FileType } from 'component-types';
 ```
 ### Component types: Prop types
 
-`component-types` package contains the following values of `actualtype` as a part of `PropType` object:
+`component-types` package contains the following values of `actualType` as a part of `PropType` object:
 
   - **`Array`** stands for `'array'`
   - **`Boolean`** stands for `'boolean'`
@@ -224,8 +224,180 @@ import { PropType, FileType } from 'component-types';
 
 ### Component types: File types
 
-The supplemental values of `subtype` in case of use `File` as a `actualtype` are available in `FileType` object:
+The supplemental values of `subtype` in case of use `File` as a `actualType` are available in `FileType` object:
   - **`Audio`** stands for `'audio'`
   - **`Image`** stands for `'image'`
   - **`Video`** stands for `'video'`
 
+## eWizard Component properties and Localization Standard
+
+To define more advanced configuration of component properties create `ewizard.config.js` file in root of component project folder.
+
+`ewizard.config.js` is a manifest which describes component props in a format that is used by eWizard to render them in a sidebar.
+This object is mixined with compopnent props. 
+
+Language code for labels should be in iso3 format (eng, deu, ukr).
+
+
+`ewizard.config.js`file should look like this:
+
+<div class="container__scrollable">
+
+```js
+    export default {
+        order: [
+          "group1",
+          "group2",
+        ],
+        groups: {  // To group props under one tab, add them to an appropriate group
+          group1: {
+            label: {
+              eng: "labelName"
+            },
+            props: [
+              "prop1",
+              "prop2",
+              "prop3",
+            ]
+          },
+          group2: {
+            label: {
+              eng: "labelName"
+            },
+            props: [
+              "prop1",
+              "prop2",
+              "prop3",
+            ]
+          }
+        },
+        props: {
+          textType: {
+            label: {
+              eng: 'Text'
+            },
+            actualType: PropType.Text
+          },
+          booleanType: {
+            label: {
+              eng: 'Boolean'
+            }
+          },
+          numberType: {
+            label: {
+              eng: 'Number'
+            }
+          },
+          urlType: {
+            label: {
+              eng: 'Url',
+            },
+            actualType: PropType.Url,
+          },
+          colorType: {
+            label: {
+              eng: 'Color'
+            },
+            actualType: PropType.Color,
+          },
+          enumType: {
+            label: {
+              eng: 'Enum'
+            },
+            actualType: PropType.Enum,
+            options: [
+              {
+                value: 'value 1',
+                label: {
+                  eng: 'Label 1'
+                }
+              },
+              {
+                value: 'value 2',
+                label: {
+                  eng: 'Label 2'
+                }
+              },
+            ],
+          },
+          fileType: {
+            label: {
+              eng: 'Audio'
+            },
+            actualType: PropType.File,
+            subtype: FileType.Audio,
+          },
+          objectType: {
+            label: {
+              eng: 'Object'
+            },
+            actualType: {
+              type: PropType.Object,
+              subtype: {
+                prop2: {
+                  actualType: PropType.Text,
+                },
+                prop3: {
+                  label: {
+                    eng: 'Audio',
+                  },
+                  actualType: PropType.File,
+                  subtype: FileType.Audio,
+                },
+              },
+            },
+          },
+          arrayType: {
+            label: {
+              eng: 'Array'
+            },
+            defaultLabel: 'Item label',
+            actualType: PropType.Array,
+            subtype: {
+              prop2: {
+                actualType: PropType.Text,
+              },
+              prop3: {
+                label: {
+                  eng: 'Audio',
+                },
+                actualType: PropType.File,
+                subtype: FileType.Audio,
+              },
+            },
+          },
+        }
+    }
+```
+</div>
+
+`ewizard.config.js` file should be included to the component instance
+```js
+
+import ewizardConfig from  './ewizard.config';
+
+export default {
+  name: 'wiz-component-name',
+  ewizardConfig,
+  components: {},
+  ...
+}
+```
+
+## Edit Mode
+
+Sometimes it is required to detect whether the component is opened in eWizard edit mode to adjust it settings. For this purposed may be used `isEditMode$` observable.
+
+The callback function of `isEditMode$` subscriber receives as an argument the state of edit mode.
+
+**Example**:
+
+```js
+mounted: function () {
+  this.editModeSub = this.$root.isEditMode$.subscribe((isEditMode) => {
+    if (!isEditMode) {
+      console.log('Edit mode started')
+    }
+  });
+}
+```
