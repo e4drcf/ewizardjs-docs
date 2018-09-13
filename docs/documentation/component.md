@@ -244,130 +244,132 @@ Language code for labels should be in iso3 format (eng, deu, ukr).
 <div class="container__scrollable">
 
 ```js
-    export default {
-        order: [
-          "group1",
-          "group2",
-        ],
-        groups: {  // To group props under one tab, add them to an appropriate group
-          group1: {
-            label: {
-              eng: "labelName"
-            },
-            props: [
-              "prop1",
-              "prop2",
-              "prop3",
-            ]
-          },
-          group2: {
-            label: {
-              eng: "labelName"
-            },
-            props: [
-              "prop1",
-              "prop2",
-              "prop3",
-            ]
-          }
+import { PropType, FileType } from 'component-types';
+
+export default {
+    order: [
+      "group1",
+      "group2",
+    ],
+    groups: {  // To group props under one tab, add them to an appropriate group
+      group1: {
+        label: {
+          eng: "labelName"
         },
-        props: {
-          textType: {
+        props: [
+          "prop1",
+          "prop2",
+          "prop3",
+        ]
+      },
+      group2: {
+        label: {
+          eng: "labelName"
+        },
+        props: [
+          "prop1",
+          "prop2",
+          "prop3",
+        ]
+      }
+    },
+    props: {
+      textType: {
+        label: {
+          eng: 'Text'
+        },
+        actualType: PropType.Text
+      },
+      booleanType: {
+        label: {
+          eng: 'Boolean'
+        }
+      },
+      numberType: {
+        label: {
+          eng: 'Number'
+        }
+      },
+      urlType: {
+        label: {
+          eng: 'Url',
+        },
+        actualType: PropType.Url,
+      },
+      colorType: {
+        label: {
+          eng: 'Color'
+        },
+        actualType: PropType.Color,
+      },
+      enumType: {
+        label: {
+          eng: 'Enum'
+        },
+        actualType: PropType.Enum,
+        options: [
+          {
+            value: 'value 1',
             label: {
-              eng: 'Text'
-            },
-            actualType: PropType.Text
-          },
-          booleanType: {
-            label: {
-              eng: 'Boolean'
+              eng: 'Label 1'
             }
           },
-          numberType: {
+          {
+            value: 'value 2',
             label: {
-              eng: 'Number'
+              eng: 'Label 2'
             }
           },
-          urlType: {
-            label: {
-              eng: 'Url',
+        ],
+      },
+      fileType: {
+        label: {
+          eng: 'Audio'
+        },
+        actualType: PropType.File,
+        subtype: FileType.Audio,
+      },
+      objectType: {
+        label: {
+          eng: 'Object'
+        },
+        actualType: {
+          type: PropType.Object,
+          subtype: {
+            prop2: {
+              actualType: PropType.Text,
             },
-            actualType: PropType.Url,
-          },
-          colorType: {
-            label: {
-              eng: 'Color'
-            },
-            actualType: PropType.Color,
-          },
-          enumType: {
-            label: {
-              eng: 'Enum'
-            },
-            actualType: PropType.Enum,
-            options: [
-              {
-                value: 'value 1',
-                label: {
-                  eng: 'Label 1'
-                }
+            prop3: {
+              label: {
+                eng: 'Audio',
               },
-              {
-                value: 'value 2',
-                label: {
-                  eng: 'Label 2'
-                }
-              },
-            ],
+              actualType: PropType.File,
+              subtype: FileType.Audio,
+            },
           },
-          fileType: {
+        },
+      },
+      arrayType: {
+        label: {
+          eng: 'Array'
+        },
+        defaultLabel: 'Item label',
+        actualType: PropType.Array,
+        subtype: {
+          prop2: {
+            actualType: PropType.Text,
+          },
+          prop3: {
             label: {
-              eng: 'Audio'
+              eng: 'Audio',
             },
             actualType: PropType.File,
             subtype: FileType.Audio,
           },
-          objectType: {
-            label: {
-              eng: 'Object'
-            },
-            actualType: {
-              type: PropType.Object,
-              subtype: {
-                prop2: {
-                  actualType: PropType.Text,
-                },
-                prop3: {
-                  label: {
-                    eng: 'Audio',
-                  },
-                  actualType: PropType.File,
-                  subtype: FileType.Audio,
-                },
-              },
-            },
-          },
-          arrayType: {
-            label: {
-              eng: 'Array'
-            },
-            defaultLabel: 'Item label',
-            actualType: PropType.Array,
-            subtype: {
-              prop2: {
-                actualType: PropType.Text,
-              },
-              prop3: {
-                label: {
-                  eng: 'Audio',
-                },
-                actualType: PropType.File,
-                subtype: FileType.Audio,
-              },
-            },
-          },
-        }
+        },
+      },
     }
+}
 ```
 </div>
 
@@ -386,7 +388,9 @@ export default {
 
 ## Edit Mode
 
-Sometimes it is required to detect whether the component is opened in eWizard edit mode to adjust it settings. For this purposed may be used `isEditMode$` observable.
+Sometimes it is required to detect if a component is opened in eWizard edit mode to change its behavior or settings (e.g, remove touch event listeners to allow user drag element while editing without any issues). For this purposed may be used `isEditMode$` observable. 
+
+`isEditMode$` is available as a part of component `$root`.
 
 The callback function of `isEditMode$` subscriber receives as an argument the state of edit mode.
 
@@ -396,7 +400,7 @@ The callback function of `isEditMode$` subscriber receives as an argument the st
 mounted: function () {
   this.editModeSub = this.$root.isEditMode$.subscribe((isEditMode) => {
     if (!isEditMode) {
-      console.log('Edit mode started')
+      console.log('Edit mode started');
     }
   });
 }
