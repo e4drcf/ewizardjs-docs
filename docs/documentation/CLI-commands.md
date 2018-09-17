@@ -93,7 +93,7 @@ This command will initialize the structure for some eDetailer. After running the
 |--------------------------|-------------------------------------------------------------------
 |     -w, --watch          | will continuously build presentation source files, so after making changes in IDE, they will be instantly reflected in the browser
 
-Command will run a develop build, so you will be able to check how the project is looking in the browser.
+This command will run a develop build, so you will be able to check how the project is looking in the browser.
 
 -------------------------------------
 <figure class="highlight bash">
@@ -104,7 +104,7 @@ Command will run a develop build, so you will be able to check how the project i
 |--------------------------|-------------------------------------------------------------------
 |     -h, --help           | outputs information about the command and available parameters
  
- Command will install eWizard component into your eDetailer, so you will be able to add it on the markup or use component API if any exists.
+ This command will install eWizard component into your eDetailer, so you will be able to add it on the markup or use component API if any exists.
 
 -------------------------------------
 <figure class="highlight bash">
@@ -115,4 +115,24 @@ Command will run a develop build, so you will be able to check how the project i
 |--------------------------|-------------------------------------------------------------------
 |  --chapter <`chapterID`> | specifies the chapterID to which slide should be added 
 
-Command will create a slide with specified slideID. All additional .html, .css will be also created.
+This command will create a slide with specified slideID. All additional .html, .css will be also created.
+
+-------------------------------------
+<figure class="highlight bash">
+    <pre class="code">$ wiz config</pre>
+</figure>
+
+|         Parameters          | Explanation 
+|-----------------------------|------------------------------------------------------------------
+|  -w, --ewizard  <`eWizard`> | set eWizard authorization server, by default starts with https://
+|  -r, --reset [key]          | reset configuration
+|  -h, --help  <`eWizard`>    | outputs information about the command and available parameters
+
+This command will help you to change some of the account configurations.
+
+-------------------------------------
+<figure class="highlight bash">
+    <pre class="code">$ wiz archive</pre>
+</figure>
+
+This command will create a zip-archive of your presentation
