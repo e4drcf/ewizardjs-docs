@@ -247,32 +247,6 @@ Language code for labels should be in iso3 format (eng, deu, ukr).
 import { PropType, FileType } from 'component-types';
 
 export default {
-    order: [
-      "group1",
-      "group2",
-    ],
-    groups: {  // To group props under one tab, add them to an appropriate group
-      group1: {
-        label: {
-          eng: "labelName"
-        },
-        props: [
-          "prop1",
-          "prop2",
-          "prop3",
-        ]
-      },
-      group2: {
-        label: {
-          eng: "labelName"
-        },
-        props: [
-          "prop1",
-          "prop2",
-          "prop3",
-        ]
-      }
-    },
     props: {
       textType: {
         label: {
@@ -345,9 +319,9 @@ export default {
               },
               actualType: PropType.File,
               subtype: FileType.Audio,
-            },
-          },
-        },
+            }
+          }
+        }
       },
       arrayType: {
         label: {
@@ -365,9 +339,9 @@ export default {
             },
             actualType: PropType.File,
             subtype: FileType.Audio,
-          },
-        },
-      },
+          }
+        }
+      }
     }
 }
 ```
