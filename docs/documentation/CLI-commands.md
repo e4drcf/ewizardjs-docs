@@ -33,8 +33,8 @@ tr:nth-child(2n){
 
 # eWizard CLI commands
 
-eWizardJS provides a CLI interface for simplifying content creation and working with eWizard platform.
-With the use of some simple CLI commands you can initialize the eDetailer, export it to appropriative CLM, push to eWizard platform or implement appropriative
+eWizard CLI provides a CLI interface for simplifying content creation and working with eWizard platform.
+With the use of some simple CLI commands you can initialize the eDetailer, export it to appropriate CLM, push to eWizard platform or implement appropriate functionality.
 
 eWizard CLI commands could be divided into a few groups depending on their purpose:
 
@@ -48,7 +48,7 @@ eWizard CLI commands could be divided into a few groups depending on their purpo
 These commands will help you to log in and logout from the platform. Since eWizard platform and eWizard CLI are strongly connected, you can log in through CLI and then proceed working in eWizard platform without any extra efforts for log in.
 
 <figure class="highlight bash">
-    <pre class="code">$ wiz login</pre>
+    <pre class="code">$ wiz login [options]</pre>
 </figure>
 
 |               Parameters                              | Explanation 
@@ -58,7 +58,7 @@ These commands will help you to log in and logout from the platform. Since eWiza
 |   -p, --password <`password`>                         | specifies a password 
 |   -h, --help                                          | outputs information about the command and available parameters
 
-This command is dedicated for login to the system. As a result, after executing this command eWizard's Login page will be opened in your default browser while the console is switched to the waiting mode. In case it is not possible to open a browser from the console, you need to do it manually an appropriate URL will be outputted in the console. After successful login, you can close a browser and continue working with eWizard CLI.
+This command is dedicated for login to the system. As a result, after executing this command eWizard's Login page will be opened in your default browser while the console is switched to the waiting mode. In case it is not possible to open a browser from the console, you need to do it manually - an appropriate URL will be outputted in the console. After successful login, you can close a browser and continue working with eWizard CLI.
 
 -------------------------------------
   <figure class="highlight bash">
@@ -71,7 +71,7 @@ This command is dedicated for log out of the system. The next time, when you wil
 
 ## eDetailing development commands
 
-The following commands are dedicated to ease the actual development of any eDetailing content (e-mails, presentations, microsites). They provide possibilities for automation content creation.
+The following commands are dedicated to ease the actual development of any eDetailing content (e-mails, presentations, survey, etc). They provide possibilities for automation content creation.
 
 -------------------------------------
   <figure class="highlight bash">
@@ -128,11 +128,11 @@ This command will create a slide with specified slideID. All additional .html, .
 |  -r, --reset [key]          | reset configuration
 |  -h, --help  <`eWizard`>    | outputs information about the command and available parameters
 
-This command will help you to change some of the account configurations.
+This command will help you to change some of your account configurations.
 
 -------------------------------------
 <figure class="highlight bash">
     <pre class="code">$ wiz archive</pre>
 </figure>
 
-This command will create a zip-archive of your presentation
+This command does not have any additional parameters. It will create a zip-archive of your eDetailer.
