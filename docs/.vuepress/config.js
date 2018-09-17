@@ -23,8 +23,10 @@ module.exports = {
         ],
         '/documentation/': [
           '',
+          ['Introduction','Introduction'],
           'attributes',
           ['CLI-commands','CLI commands'],
+          ['Getting-started','Getting started'],
           'component'
         ],
         '/release-notes/': [
