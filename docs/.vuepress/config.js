@@ -24,7 +24,14 @@ module.exports = {
         '/documentation/': [
           '',
           'attributes',
-          'component'
+          'component',
+          {
+            title: 'Email Development',
+            collapasble: false,
+            children: [
+              'email-development/getting-started'
+            ]
+          }
         ],
         '/release-notes/': [
           '',
