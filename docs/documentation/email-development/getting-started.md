@@ -27,4 +27,5 @@ Also, you will be asked questions about directory where your project will be gen
 Use the **wiz dev** command to run the development build and see the created email template. Open index.html file in any browser to see the result.
 
 ![There are some problems with downloading of this image.](../../media/images/emailResult.png)
+
 By following these steps, you have created your basic email template. You can continue the work and fill with content you want by using different wiz-tools. 
