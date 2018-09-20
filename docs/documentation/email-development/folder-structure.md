@@ -3,7 +3,7 @@
 After initialization of the email template project in the directory which stores your project will be created a basic set of folders and files for developing an email template. 
 
 | Name            | Type            | Description |
-| --------------- |:---------------:|:-----|
+| --------------- |:---------------------:|:-----|
 | .ewizard        | folder          | Stores the settings file where is described a path to the all used                                            components and files for building an email template |
 | build           | folder          | Contains the main file where is described all logic for building an                                           email  |
 | common          | folder          | Stores all common components, styles, localization and blocks  |
@@ -16,6 +16,6 @@ After initialization of the email template project in the directory which stores
 | index.html      | HTML5 file      | Collects and renders all written code from an app.vue file |
 | index.js        | JavaScript file | Imports and registers all used components                                                                     and blocks. This file is used for uploading an email to your eWizard                                          account |
 | index.server.js | JavaScript file | Contains the same information as the index.js file, but it is used for                                        local email build |
-| package.json    | Json file       | Stores general information and settings of a created email template                                           together with a component dependencies  |
+| package.json    | JSON file       | Stores general information and settings of a created email template                                           together with a component dependencies  |
 | preview.jpg     | image           | Preview of a created email template   |
-| settings.json   | Json file       | Initial settings for the created email template.   |
+| settings.json   | JSON file       | Initial settings for the created email template.   |
