@@ -53,17 +53,23 @@ Add `wiz-block` to root element of block component in `index.vue` file
 ```
 
 ::: warning
-Whenever the block is added to ET in eWizard, only the markup from its template will be automatically pasted to ET markup (App.vue), Thus to style the block use classes defined in ET or add styles as inline.
+Whenever the block is added to ET in eWizard, only the markup from its template will be pasted to ET markup (App.vue). Thus, to style the block use classes defined in ET or use inline style.
 :::
 
 ## wiz-placeholder
 
-The `wiz-placeholder` is a basic component that allows to create editable horizontal grid in your block. The `wiz-placeholder` can wrap a multiple amount of [wiz-column](#wiz-column) and renders them as a table in the single row. 
+The `wiz-placeholder` is a basic component that allows to create editable horizontal grid using eWizard visual interface. The `wiz-placeholder` may contain a multiple amount of [wiz-column](#wiz-column) and renders each column as a table cell. The table cells are displayed horizontally.
 
 ### Usage
 
 ```html
-
+	<wiz-wrapper >
+		<wiz-placeholder>
+			<wiz-column></wiz-column>
+			<wiz-column></wiz-column>
+			<wiz-column></wiz-column>
+		</wiz-placeholder>
+	</wiz-wrapper>
 ```
 
 ## wiz-column
