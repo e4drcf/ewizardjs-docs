@@ -23,9 +23,11 @@ module.exports = {
         ],
         '/documentation/': [
           '',
+          ['Getting-started','Getting started'],
           'attributes',
           'component',
           ['structure', 'Presentation structure']
+          'navigator'
         ],
         '/release-notes/': [
           '',
