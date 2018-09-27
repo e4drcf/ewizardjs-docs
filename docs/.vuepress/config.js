@@ -23,22 +23,16 @@ module.exports = {
         ],
         '/documentation/': [
           '',
-          ['Introduction','Introduction'],
-          'attributes',
-          ['CLI-commands','CLI commands'],
           ['Getting-started','Getting started'],
-          'component'
+          'attributes',
+          'component',
+          'navigator',
         ],
         '/release-notes/': [
           '',
           'create',
           'install',
           'publish'
-        ],
-        '/': [
-          '',
-          'contact',
-          'about'
         ]
       },
       // TODO: Add Github link
@@ -51,5 +45,5 @@ module.exports = {
       docsBranch: 'master',
       editLinks: true,
       editLinkText: 'Help us improve this page!'
-    }
+    } 
   }

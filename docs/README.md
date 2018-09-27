@@ -16,5 +16,7 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 
 ![An image](./media/images/cat.jpeg)
 
+## Main sections are:
+
 - [Guide](/guide/)
 - [Documentation](/documentation/)
