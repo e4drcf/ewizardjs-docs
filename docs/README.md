@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Get Started →
-actionLink: /guide/
+actionLink: /documentation/Getting-started.html
 features:
 - title: Simplicity First
   details: Minimal setup with markdown-centered project structure helps you focus on writing.
@@ -18,5 +18,5 @@ eWizard CLI is an automated HTML5 framework for creative agencies and developers
 
 ## Main sections are:
 
-- [Guide](/documentation/Getting-started)
+- [Guide](/documentation/Getting-started.html)
 - [Documentation](/documentation/)

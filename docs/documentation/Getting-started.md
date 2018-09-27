@@ -54,7 +54,7 @@ To see how the presentation looks in a browser run the `wiz dev --watch` command
 
 Now let's go back to the IDE and open index.vue file (the first slide) which you can find in the `slides/default` folder.
 
-As you can see, it is .vue file. Also, you may notice that some content is already present on a slide, it is automatically added by the engine. Tag <wiz-text :text="$t('text')"></wiz-text> which is placed inside <template></template> tag represents a string of text which is stated in `text` property of `en` object. Note that <template></template> is a tag where all the slide content should be placed, this tag should be the only one in the file and could not be removed.
+As you can see, it is .vue file. Also, you may notice that some content is already present on a slide, it is automatically added by the engine. Tag `<wiz-text :text="$t('text')"></wiz-text>` which is placed inside <template></template> tag represents a string of text which is stated in `text` property of `en` object. Note that <template></template> is a tag where all the slide content should be placed, this tag should be the only one in the file and could not be removed.
 
 Let's slightly change the greeting text to check editability of our presentation. For such purpose, we should change value of `text` property to "Hello World", for example. Since we have run `wiz dev --watch` command previously, it will automatically build edited files.
 
