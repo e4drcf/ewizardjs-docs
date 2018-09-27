@@ -26,7 +26,7 @@ module.exports = {
           ['Getting-started','Getting started'],
           'attributes',
           'component',
-          ['structure', 'Presentation structure']
+          ['structure', 'Presentation structure'],
           'navigator'
         ],
         '/release-notes/': [
