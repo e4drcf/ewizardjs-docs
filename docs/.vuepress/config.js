@@ -25,6 +25,7 @@ module.exports = {
             title: 'Email Development',
             collapasble: false,
             children: [
+              'email-development/getting-started',
               'email-development/folder-structure'
             ]
           }
