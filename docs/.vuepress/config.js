@@ -23,6 +23,7 @@ module.exports = {
         ],
         '/documentation/': [
           '',
+          ['Getting-started','Getting started'],
           'attributes',
           'component',
           {

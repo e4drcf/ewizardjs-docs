@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Get Started →
-actionLink: /guide/
+actionLink: /documentation/Getting-started.html
 features:
 - title: Simplicity First
   details: Minimal setup with markdown-centered project structure helps you focus on writing.
@@ -12,11 +12,11 @@ features:
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
-# Hello VuePress
+# eWizard.js
 
-![An image](./media/images/cat.jpeg)
+eWizard CLI is an automated HTML5 framework for creative agencies and developers' teams, which lies on the background of eWizard content management platform, empowering Digital Content Factory. The technology and platform are already adopted by over 20 pharmaceutical companies and global creative agencies.
 
 ## Main sections are:
 
-- [Guide](/guide/)
+- [Guide](/documentation/Getting-started.html)
 - [Documentation](/documentation/)
