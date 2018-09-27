@@ -1,31 +1,49 @@
 # Component development
 
+<style>
+  .container__scrollable {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+</style>
+
 ## Component folder structure
 
 ```bash
-	|_ package.json  #npm manifest
-	|_ index.vue  #component code should be here
-	|_ demo/  #demo presentation folder
-	|_ media/  #media folder
-		|_ images
-		|_ video
-    |_ fonts
-    
+.
+└─
+  └─.ewizard
+  |  └─ settings.json #contains the project settings and plugins configuration
+  ├─ package.json # npm manifest
+  ├─ index.vue # component code should be here
+  ├─ demo/ # demo presentation folder
+  └─ media/ # media folder
+    ├─ images/
+    ├─ video/
+    └─ fonts/
 ```
 
 ## Component development guidelines
 
-0. Follow **official** Vue [guidelines](https://ru.vuejs.org/v2/guide/components.html)
-1. Add `wiz-component-name` class to the root element of component
-2. Define props according to ewizardjs guidelines
+1. Follow **official** Vue [guidelines](https://ru.vuejs.org/v2/guide/components.html)
+2. Add `wiz-component-name` class to the root element of component
+3. Define props according to ewizardjs guidelines
 
-## Component Template repository
+## Creating a component
 
-Copy this [repository](https://git.qapint.com/ewizardjs/edetailer/components/template) to create new component.
+Run `wiz init` command and pick the component from the given preset.
+```bash
+$ wiz init
+? Choose template you want to use: (Use arrow keys)
+  email
+  edetailer
+  survey
+> component
+```
 
 ## Component Development process
 
-Follow this [process](https://doc.mps-cg.com/display/CCD/Process+of+development+wiz+components) for component development.
+Follow this [process](https://confluence.viseven.com/display/CCD/Process+of+development+wiz+components) for component development.
 
 ## Interactive Components
 
@@ -33,19 +51,24 @@ In the case when a component changes its own state it should notify external wor
 
 It makes it possible to subscribe in a parent component for child's component data changes.
 
-Vue defines a special mechnism for it via modifier .sync.
+Vue defines a special mechanism for it via modifier .sync.
 
-[Read here about its usage.](https://ru.vuejs.org/v2/guide/components-custom-events.html#%D0%9C%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80-sync)
+[Read here about its usage.](https://vuejs.org/v2/guide/components-custom-events.html#sync-Modifier)
 
 This means that every component that modifies its data **must emit event `update`** in such format:
+```js
+    this.$emit('update:prop', newProp);
+```
 
-    this.$emit('update:prop', newProp)
+## Component properties standard (index.vue)
 
-
-## Component properties standard
+Vue allows to define component [props](https://vuejs.org/v2/guide/components-props.html) in a several ways. As a standard ewizardjs use component props defined as object.
 
 Props object should look like this:
 
+<div class="container__scrollable">
+
+```js
     props: {
       stringType: {
         type: String,
@@ -55,7 +78,6 @@ Props object should look like this:
         type: String,
         label: 'Text',
         actualType: PropType.Text,
-        disabledActions: [Action.Text.bold],
         default: 'Some Text',
       },
       booleanType: {
@@ -108,7 +130,7 @@ Props object should look like this:
         label: 'Object',
         actualType: {
           type: PropType.Object,
-          subtype: {
+          subtype: {  
             prop1: String,
             prop2: {
               type: String,
@@ -160,3 +182,200 @@ Props object should look like this:
         },
       },
     }
+```
+</div>
+
+Aside to well known vue properties for [type check](https://vuejs.org/v2/guide/components-props.html#Type-Checks) or [validation](https://vuejs.org/v2/guide/components-props.html#Prop-Validation) etc, ewizardjs use additional fields for props declaration, to fit them for editing in eWizard.
+
+According to the preceding example, the component Prop may be described with the following fields:
+- `label` - specifies the label of component in ewizardjs editor
+- `type` - contains the type of Prop according to the javascript native data types
+- `actualType` - specifies the type of Prop according to the [PropType](#component-types-prop-types) list
+- `subtype` - specifies the of Prop subtype in case of the usage more complex actual types such as `File`and `Array`. When use  `File`as `actualType`, subtype can be set to one of [FileType](#component-types-prop-types) values. In case of usage [Array]() as actual type, `subtype` contains the object with a description of each Prop to be passed like array.
+ - `options` - contains a list of available options that may be selected as value of the Prop. Each option nested in the `options` is displayed in eWizard editor in drop down list.
+ - `default` - specifies default value of the Prop if the value wasn't passed
+
+### Component types
+
+The possible component `actualType` and `subtype` values are defined in `component-types` package in `PropType` and `FileType`. Add it as npm package into the component project:
+
+```bash
+npm i --save git+ssh://git@git.qapint.com:ewizardjs/core/component-types.git
+```
+To use `component-types` in props declarations import it:
+
+```js
+import { PropType, FileType } from 'component-types';
+```
+### Component types: Prop types
+
+`component-types` package contains the following values of `actualType` as a part of `PropType` object:
+
+  - **`Array`** stands for `'array'`
+  - **`Boolean`** stands for `'boolean'`
+  - **`Color`** stands for `'color'`
+  - **`Enum`** stands for `'enum'`
+  - **`File`** stands for `'file'`
+  - **`Number`** stands for `number'`
+  - **`Object`** stands for `'object`
+  - **`String`** stands for `'string'`
+  - **`Text`** stands for `'text'`
+  - **`Url`** stands for `'url'`
+
+### Component types: File types
+
+The supplemental values of `subtype` in case of use `File` as a `actualType` are available in `FileType` object:
+  - **`Audio`** stands for `'audio'`
+  - **`Image`** stands for `'image'`
+  - **`Video`** stands for `'video'`
+
+## eWizard Component properties and Localization Standard
+
+To define more advanced configuration of component properties create `ewizard.config.js` file in root of component project folder.
+
+`ewizard.config.js` is a manifest which describes component props in a format that is used by eWizard to render them in a sidebar.
+This object is mixined with compopnent props. 
+
+Language code for labels should be in iso3 format (eng, deu, ukr).
+
+
+`ewizard.config.js`file should look like this:
+
+<div class="container__scrollable">
+
+```js
+import { PropType, FileType } from 'component-types';
+
+export default {
+    props: {
+      textType: {
+        label: {
+          eng: 'Text'
+        },
+        actualType: PropType.Text
+      },
+      booleanType: {
+        label: {
+          eng: 'Boolean'
+        }
+      },
+      numberType: {
+        label: {
+          eng: 'Number'
+        }
+      },
+      urlType: {
+        label: {
+          eng: 'Url',
+        },
+        actualType: PropType.Url,
+      },
+      colorType: {
+        label: {
+          eng: 'Color'
+        },
+        actualType: PropType.Color,
+      },
+      enumType: {
+        label: {
+          eng: 'Enum'
+        },
+        actualType: PropType.Enum,
+        options: [
+          {
+            value: 'value 1',
+            label: {
+              eng: 'Label 1'
+            }
+          },
+          {
+            value: 'value 2',
+            label: {
+              eng: 'Label 2'
+            }
+          },
+        ],
+      },
+      fileType: {
+        label: {
+          eng: 'Audio'
+        },
+        actualType: PropType.File,
+        subtype: FileType.Audio,
+      },
+      objectType: {
+        label: {
+          eng: 'Object'
+        },
+        actualType: {
+          type: PropType.Object,
+          subtype: {
+            prop2: {
+              actualType: PropType.Text,
+            },
+            prop3: {
+              label: {
+                eng: 'Audio',
+              },
+              actualType: PropType.File,
+              subtype: FileType.Audio,
+            }
+          }
+        }
+      },
+      arrayType: {
+        label: {
+          eng: 'Array'
+        },
+        defaultLabel: 'Item label',
+        actualType: PropType.Array,
+        subtype: {
+          prop2: {
+            actualType: PropType.Text,
+          },
+          prop3: {
+            label: {
+              eng: 'Audio',
+            },
+            actualType: PropType.File,
+            subtype: FileType.Audio,
+          }
+        }
+      }
+    }
+}
+```
+</div>
+
+`ewizard.config.js` file should be included to the component instance
+```js
+
+import ewizardConfig from  './ewizard.config';
+
+export default {
+  name: 'wiz-component-name',
+  ewizardConfig,
+  components: {},
+  ...
+}
+```
+
+## Edit Mode
+
+Sometimes it is required to detect if a component is opened in eWizard edit mode to change its behavior or settings (e.g, remove touch event listeners to allow user drag element while editing without any issues). For this purposed may be used `isEditMode$` observable. 
+
+`isEditMode$` is available as a part of component `$root`.
+
+The callback function of `isEditMode$` subscriber receives as an argument the state of edit mode.
+
+**Example**:
+
+```js
+mounted: function () {
+  this.editModeSub = this.$root.isEditMode$.subscribe((isEditMode) => {
+    if (!isEditMode) {
+      console.log('Edit mode started');
+    }
+  });
+}
+```
