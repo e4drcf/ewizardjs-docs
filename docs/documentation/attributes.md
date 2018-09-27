@@ -12,30 +12,30 @@ value which identifies the component.
   change of the component.
     
 Example (DSL):
-
-	<div key="1">
-	  <wiz-text key="2"></wiz-text>
-	</div>
-
+```html
+<div key="1">
+  <wiz-text key="2"></wiz-text>
+</div>
+```
  * `data-id` - custom attribute added by [cobalt-editor](https://git.qapint.com/cobalt-dev/cobalt-editor) 
   to each element/component in editable template (DSL). It is required to map DOM elements to their
   representation in DSL. cobalt-editor uses `data-id` attribute retrieved from DOM element
   to look up for its representation in DSL and performs editing on DSL.
   
 DSL:
-	
-	<div data-id="1">
-	  <wiz-text data-id="2"></wiz-text>
-	</div>
-	
+```html	
+<div data-id="1">
+  <wiz-text data-id="2"></wiz-text>
+</div>
+```
 DOM:
-
-    <div data-id="1">
-      <div data-id="2">
-        <div>Text</div>
-      </div>
-    </div>
-
+```html
+<div data-id="1">
+  <div data-id="2">
+    <div>Text</div>
+  </div>
+</div>
+```
  * `data-component` - custom attribute added only for components during their rendering. It is 
   required only by email templates and only for prod builds. Since all email prod builds use
   server side rendering this attribute is added in respective entry point for SSR
@@ -45,21 +45,22 @@ DOM:
   each component which are required for fixing issues in some mail clients.
   
 DSL:
-
-	<div>
-	  <wiz-text></wiz-text>
-	  <p>Some paragraph</p>
-	  <wiz-image></wiz-image>
-	</div>
-	
+```html
+<div>
+  <wiz-text></wiz-text>
+  <p>Some paragraph</p>
+  <wiz-image></wiz-image>
+</div>
+```	
 After rendering
-
-	<div>
-    <div data-component="1">
-      <div>Text</div>
-    </div>
-    <p>Some paragraph</p>
-    <div data-component="2">
-      <img src="default.jpg" />
-    </div>
+```html
+<div>
+  <div data-component="1">
+    <div>Text</div>
   </div>
+  <p>Some paragraph</p>
+  <div data-component="2">
+    <img src="default.jpg" />
+  </div>
+</div>
+```
