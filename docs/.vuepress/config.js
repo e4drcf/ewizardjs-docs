@@ -25,7 +25,8 @@ module.exports = {
           '',
           'attributes',
           'component',
-          'email-components'
+          'email-development/email-components'
+
         ],
         '/release-notes/': [
           '',
