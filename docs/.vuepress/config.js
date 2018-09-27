@@ -21,6 +21,7 @@ module.exports = {
           'component',
           ['structure', 'Presentation structure'],
           'navigator',
+          ['Settings','Settings'],
           {
             title: 'Email Development',
             collapasble: false,
