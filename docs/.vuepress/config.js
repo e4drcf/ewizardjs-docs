@@ -4,10 +4,7 @@ module.exports = {
     themeConfig: {
       nav: [
         { text: 'Home', link: '/' },
-        { text: 'Guide', link: '/guide/' },
         { text: 'Documentation', link: '/documentation/' },
-        { text: 'Release Notes', link: '/release-notes/' },
-        { text: 'Components', link: 'https://components.cobalt-engine.com/' },
       ],
       algolia: {
         // DANGER!!! Change to real key when you register at https://community.algolia.com/docsearch/
@@ -17,10 +14,6 @@ module.exports = {
       lastUpdated: 'Last Updated',
       sidebarDepth: 2,
       sidebar: {
-        '/guide/': [
-          '',
-          'start-tutorial'
-        ],
         '/documentation/': [
           '',
           ['Getting-started','Getting started'],
@@ -28,12 +21,6 @@ module.exports = {
           'component',
           ['structure', 'Presentation structure'],
           'navigator'
-        ],
-        '/release-notes/': [
-          '',
-          'create',
-          'install',
-          'publish'
         ]
       },
       // TODO: Add Github link
