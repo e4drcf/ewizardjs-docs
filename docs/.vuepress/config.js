@@ -20,7 +20,14 @@ module.exports = {
           'attributes',
           'component',
           ['structure', 'Presentation structure'],
-          'navigator'
+          'navigator',
+          {
+            title: 'Email Development',
+            collapasble: false,
+            children: [
+              'email-development/getting-started'
+            ]
+          }
         ]
       },
       // TODO: Add Github link
