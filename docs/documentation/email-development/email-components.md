@@ -125,14 +125,60 @@ Each item passed to the slot of `wiz-layout` is rendered in a row or column (whi
 | `align`  | _String_	| Specifies how the cell content's horizontal alignment will be handled. Possible values are the same as [align](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td#Attributes) attribute has.
 | `width`  | _String_   | Specifies the width of `wiz-layout` itself
 | `css`	   | _Object_	| This prop may contain an object which is described according to vue [Object syntax](https://vuejs.org/v2/guide/class-and-style.html#Object-Syntax-1) that specifies style information of a `table` produced by `wiz-layout`. Styles described in `css` object are applied as table inline styles.
-| `grid`   | _String, Array_ | The property may contain an array of objects with style information of the table cells (each cell wraps `wiz-layout` item). Styles described in array' object are assigned to aproprative cell.
+| `grid`   | _String, Array_ | The property may contain an array of objects with style information of the table cells (each cell wraps `wiz-layout` item). Styles described in array' object are assigned to appropriate cell.
 
 ::: tip
-The grid prop is commonly used to manipulate the styles of multiple table cells produced by `wiz-layout` component. Use it to specify layout of `wiz-layout` items by setting width, padding etc of table cells (which helps to create some sort of grid) 
+The grid prop is commonly used to manipulate the styles of multiple table cells produced by `wiz-layout` component. Use it to specify layout of `wiz-layout` items by setting width, padding etc of table cells (which helps to create some sort of a grid) 
 :::
 
 #### Usage
 
 ```html
+<i18n>
+	{
+		"en": {
+			"main_text": "<div style='line-height: 20px;text-align: left;'><span style='color:#4d4d4d;font-size: 14px;font-family:arial,helvetica neue,helvetica,sans-serif;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque urna.</span></div>"
+		}
+	}
+</i18n>
 
+<template>
+	<table class="container m-full-width" cellspacing="0" style="padding-top: 20px; padding-bottom: 20px;width: 600px">
+		<tr>
+			<td align="center">
+				<wiz-layout class="fragment content-2w border-collapse m-p-0 m-p-lr-20" :css="{minHeight: '20px'}" type="horizontal" :grid="layoutGrid">
+
+					<!-- Main Content -->
+					<wiz-layout class="border-collapse" :css="{colour: 'red'}">
+						<wiz-text align="left" :text="$t('main_text')"></wiz-text>
+					</wiz-layout>
+
+					<wiz-layout class="border-collapse" :css="{colour: 'green'}">
+						<wiz-text align="left" :text="$t('main_text')"></wiz-text>
+					</wiz-layout>
+					<!-- Main Content -->
+
+				</wiz-layout>
+			</td>
+		</tr>
+	</table>
+</template>
+
+<script>
+    export default {
+        name: 'content-2w',
+				data: function(){
+					return {
+							layoutGrid:[
+								{ paddingRight: "30px" },
+								{ paddingRight: "20px" }
+							]
+						}
+					}
+    }
+</script>
 ```
+
+**Result**
+
+![wiz-placeholder](../../media/images/wiz-layout.jpg)
