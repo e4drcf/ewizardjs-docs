@@ -18,5 +18,5 @@ eWizard CLI is an automated HTML5 framework for creative agencies and developers
 
 ## Main sections are:
 
-- [Guide](/guide/)
+- [Guide](/documentation/Getting-started)
 - [Documentation](/documentation/)
