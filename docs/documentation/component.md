@@ -2,14 +2,16 @@
 
 ## Component folder structure
 
-	|_ package.json - npm manifest
-	|_ index.vue - component code should be here
-	|_ demo/ - demo presentation folder
-	|_ media/ - media folder
+```bash
+	|_ package.json  #npm manifest
+	|_ index.vue  #component code should be here
+	|_ demo/  #demo presentation folder
+	|_ media/  #media folder
 		|_ images
 		|_ video
-		|_ fonts
-
+    |_ fonts
+    
+```
 
 ## Component development guidelines
 

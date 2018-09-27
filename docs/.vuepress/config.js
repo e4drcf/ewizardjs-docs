@@ -24,7 +24,8 @@ module.exports = {
         '/documentation/': [
           '',
           'attributes',
-          'component'
+          'component',
+          'navigator',
         ],
         '/release-notes/': [
           '',
