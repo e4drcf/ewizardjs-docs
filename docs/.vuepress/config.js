@@ -27,7 +27,8 @@ module.exports = {
             collapasble: false,
             children: [
               'email-development/getting-started',
-              'email-development/folder-structure'
+              'email-development/folder-structure',
+              'email-development/blocks'
             ]
           }
         ]
