@@ -2,7 +2,7 @@
 
 ## Preconditions
 
-Before starting the development be sure that you have installed the latest version of eWizard CLI. More detailed information about eWizard CLI installation you can find [here](./Introduction.html). 
+Before starting the development be sure that you have installed the latest version of eWizard CLI. More detailed information about eWizard CLI installation you can find [here](../Installation.html). 
 
 ## Beginning of work
 

@@ -16,6 +16,7 @@ module.exports = {
       sidebar: {
         '/documentation/': [
           '',
+          ['Installation','Installation'],
           ['Getting-started','Getting started'],
           'attributes',
           'component',
