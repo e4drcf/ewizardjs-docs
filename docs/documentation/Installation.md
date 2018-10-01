@@ -11,25 +11,11 @@ Also, verify the availability of the Git system. To download it, click [here](ht
 
 ## Installing 
 
-### Installation for cutstomers
-
 To download the eWizard CLI, use the command prompt as administrator and run the following command: 
 ```
 npm install -g ewizard-cli
 ```
 This command will download all required modules and install them globally on your local PC.
-
-### Installation for internal users
-
-To install eWizard CLI you should perform the following commands in some empty folder:
-
-* git clone git@git.qapint.com:ewizardjs/ewizard-cli.git
-* cd ewizard-cli
-* git checkout [branch you need] (develop || master)
-* npm i
-* npm link
-
-After all these steps eWizard CLI will be successfully installed on your PC.
 
 ## Starting
 

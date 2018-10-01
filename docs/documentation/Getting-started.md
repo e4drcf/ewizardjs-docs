@@ -8,7 +8,7 @@ In this part of the tutorial you will learn how to:
 
 ## Presentation creation
 
-Let's get prepared for creating our presentation. First of all, you need eWizard CLI to be installed on your computer. So, if it is not installed on your PC yet - here you can find the [installation tutorial](Introduction.html). Since our environment is ready for use, we should create a folder for our presentation. Let's name our folder - `first-presentation`.
+Let's get prepared for creating our presentation. First of all, you need eWizard CLI to be installed on your computer. So, if it is not installed on your PC yet - here you can find the [installation tutorial](Installation.html). Since our environment is ready for use, we should create a folder for our presentation. Let's name our folder - `first-presentation`.
 
 Open the command line in `first-presentation` folder and run the following command:
 

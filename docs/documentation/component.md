@@ -25,7 +25,7 @@
 
 ## Component development guidelines
 
-1. Follow **official** Vue [guidelines](https://ru.vuejs.org/v2/guide/components.html)
+1. Follow **official** Vue [guidelines](https://vuejs.org/v2/guide/components.html)
 2. Add `wiz-component-name` class to the root element of component
 3. Define props according to ewizardjs guidelines
 

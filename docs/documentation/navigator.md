@@ -1,6 +1,6 @@
 ## Navigator
 
-For navigation in the eWizardjs project is responsible Navigator module. Navigator is part of the core engine and is available in the presentations and surveys by default. Navigator uses [structure.json](documentation/structure/) file which denotes standard slide demonstration flow. Having said that you can still create the new demonstration [flow](#flow) dynamically while viewing a presentation.
+For navigation in the eWizardjs project is responsible Navigator module. Navigator is part of the core engine and is available in the presentations and surveys by default. Navigator uses [structure.json](./structure.html) file which denotes standard slide demonstration flow. Having said that you can still create the new demonstration [flow](#flow) dynamically while viewing a presentation.
 
 **Usage**
 
