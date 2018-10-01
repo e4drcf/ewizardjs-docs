@@ -6,8 +6,7 @@
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "vuepress": "^0.10.1"
   },
