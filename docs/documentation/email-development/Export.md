@@ -8,6 +8,6 @@ One of the main features of eWizard is a possibility to make an export of email 
 
 You will receive the report on the export results. For the successful export the report will contain the link to the archived template download:
 
-<img src="../../media/images/email-link.png alt="Downloadlink" style="display: block; margin: 0 auto;">
+<img src="../../media/images/email-link.png" alt="Downloadlink" style="display: block; margin: 0 auto;">
 
 Alternatively, you can download any successfully exported email template via the Details section (form the left side bar).
