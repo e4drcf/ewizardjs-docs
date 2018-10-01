@@ -11,7 +11,7 @@
   }
 </style>
 
-Block element stands for the ready to use piece of email template (**ET**) markup with predefined content and design. User can add block to **ET** and edit it in eWizard editor. The concept of blocks intends that user can quickly construct Email from the set of predefined elements with determined layout, and edit them using visual editor without having the issues with `<table>` markup and styling.
+Block element stands for the ready to use piece of email template (**ET**) markup with predefined content and design. User can add block to **ET** and edit it in eWizard editor. The concept of blocks intends that user can quickly construct email from the set of predefined elements with determined layout and edit them using visual editor without having the issues with `<table>` markup and styling.
 
 For now, all the blocks of **ET** are defined and stored in **ET** source files as vue components.
 
@@ -21,7 +21,7 @@ By default, the initialized **ET** project (created by `wiz init` command) alrea
 
 ![Image](../../media/images/blocks-sidebar.jpg)
 
-All these blocks are taken from the `common/blocks-library/` folder and serve as templates. Once user have add the block to **ET**, the block component is being coppied from the `blocks-library/` to `blocks/` folder.
+All these blocks are taken from the `common/blocks-library/` folder and serve as templates. Once user added the block to **ET**, the block component is being copied from the `blocks-library/` to `blocks/` folder.
 
 The `blocks-library` and `blocks` folders have the structure as bellow:
 
@@ -45,7 +45,7 @@ The `blocks-library` and `blocks` folders have the structure as bellow:
       ...
 ```
 
-To be able view and [add a block in eWizard ](#adding-the-block-to-**ET**) , the block should be registered in [blocks.json](#block-metadata) file.
+To be able to view and [ to add a block in eWizard ](#adding-the-block-to-**ET**), the block should be registered in [blocks.json](#block-metadata) file.
 
 ## Block development
 
@@ -163,7 +163,7 @@ Result:
 
 ![Image](../../media/images/block-result.png)
 
-To manipulate styles of the elements, ewizardjs component `wiz-layout` has special props such as:
+To manipulate styles of the elements, eWizardjs component `wiz-layout` has special props such as:
 
 - `css` - used to pass the styles inlined in the root element of `wiz-layout` component;
 - `grid` - used to pass inlined styles to table cells that wraps nested elements of `wiz-layout`;
@@ -256,7 +256,7 @@ export default {
 };
 ```
 
-However, after completing the block development, it is recommended to add the block correctly(by copying the block to `common/blocks` folder), so user will be able to edit block in eWizard.
+However, after completing the block development, it is recommended to add the block correctly (by copying the block to `common/blocks` folder), so user will be able to edit block in eWizard.
 :::
 
 ## Adding block in eWizard editir
