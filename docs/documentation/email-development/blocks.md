@@ -21,14 +21,14 @@ By default, the initialized **ET** project (created by `wiz init` command) alrea
 
 ![Image](../../media/images/blocks-sidebar.jpg)
 
-All these blocks are taken from the `common/blocks-library/` folder and serves as templates. Once user have add the block to **ET**, the block component is being coppied from the `blocks-library/` to `blocks/` folder.
+All these blocks are taken from the `common/blocks-library/` folder and serve as templates. Once user have add the block to **ET**, the block component is being coppied from the `blocks-library/` to `blocks/` folder.
 
 The `blocks-library` and `blocks` folders have the structure as bellow:
 
 ```bash
 .
 └─common/
-   ├─ blocks-library/ # contains the blocks templates that are available to add to via editor
+   ├─ blocks-library/ # contains the blocks templates that are available to add via eWizard editor
    |  ├─content-2m/ # the folder with block itself
    |  |  ├─public/ # contains media files to be used in the block
    |  |  | └─placeholder_290x290.jpg
@@ -51,11 +51,11 @@ To be able view and [add a block in eWizard ](#adding-the-block-to-**ET**) , the
 
 ### Block markup
 
-The block itself is represented as simple vue component and is described in `index.vue` file of its folder.
+The block itself is represented as a simple vue component and described in `index.vue` file of its folder.
 
-Lets try to create our first custom block component.
+Let's try to create our first custom block component.
 To do so, create a folder `my-block` within `common/blocks-library/` folder.
-The markup of block should be added to `index.vue` file within `template` tag. So create `index.vue` file within `my-block` and add the preceeding code:
+The markup of block should be added to `index.vue` file within `template` tag. So, we should create `index.vue` file within `my-block` and add the preceeding code:
 
 <div class="container-scrollable">
 
@@ -100,13 +100,13 @@ The code above contains block markup itself and the textual data that is stored 
 
 All media resources and `placeholderImage` that is passed to `wiz-image` should be stored in `my-block/public/` folder.
 
-To see the result [add the block commponent to **ET** markup](#adding-the-block-to-et), rebuild the procject (by running [wiz dev]() command) and open the `./index.html` in a browser.
+To see the result [add the block commponent to **ET** markup](#adding-the-block-to-et), rebuild the project (by running [wiz dev]() command) and open the `./index.html` in a browser.
 
 ### Block styling
 
-To style the block component add `<style>` tag into its `index.vue` file and define there `css` code to fit the block content your design. It is a common practice to make a styllesheet with commonly used `css` classes and reuse them while developing the custom blocks.
+To style the block component add `<style>` tag into its `index.vue` file and define there `css` code to fit the block content your design. It is a common practice to make a stylesheet with commonly used `css` classes and reuse them while developing the custom blocks.
 
-Upon the necessity a css code may be inlined in the html elements.
+Upon the necessity CSS code may be inlined in the HTML elements.
 
 <div class="container-scrollable">
 
@@ -163,18 +163,18 @@ Result:
 
 ![Image](../../media/images/block-result.png)
 
-To manipulate styles of the elements, ewizardjs component `wiz-layut` has special props such as:
+To manipulate styles of the elements, ewizardjs component `wiz-layout` has special props such as:
 
-- `css` - used to pass the styles inlined in the root element of `wiz-layut` component;
-- `grid` - used to pass inlined styles to table cells that wraps nested elements of `wiz-layout`.
+- `css` - used to pass the styles inlined in the root element of `wiz-layout` component;
+- `grid` - used to pass inlined styles to table cells that wraps nested elements of `wiz-layout`;
 
-Reffer to [`wiz-layout` props](https://git.qapint.com/ewizardjs/email/components/wiz-layout/blob/master/index.vue#L12) to get aquented with props syntax, format and explanation.
+Refer to [`wiz-layout` props](https://git.qapint.com/ewizardjs/email/components/wiz-layout/blob/master/index.vue#L12) to get acquainted with props syntax, format and explanation.
 
 ### Block metadata
 
-eWizard editor takes out the information about the blocks from the file `blocks.json` in root of `blocks-library` and add all the blocks denoted in `blocks.json` to sidebar.
+eWizard editor takes out the information about the blocks from the file `blocks.json` in root of `blocks-library` folder and add all the blocks denoted in `blocks.json` to sidebar.
 
-Also, `blocks.json` contains meta information with block content description. That information is showed in when user hover mouse upon a block in sidebar.
+Also, `blocks.json` contains meta information with block content description. That information is showed in when user hover the mouse upon a block in sidebar.
 
 Each block from the `blocks-library` should be described as an object in `components` array of `blocks.json` file with the following structure:
 
@@ -203,7 +203,7 @@ Each block from the `blocks-library` should be described as an object in `compon
 
 Each object in metadata is rendered as a new string with helpful information, that appears when the user moves the mouse pointer over a block in sidebar. That information may help user to understand which type of content block has and to find out the content description and properties.
 
-As result, the following sidebar tooltip of `my-block` may appear:
+As a result, the following sidebar tooltip of `my-block` may appear:
 
 <div class="align-image-center">
 
@@ -256,7 +256,7 @@ export default {
 };
 ```
 
-However, after completing the block development, it is recommended to add the block in a right way (by copying the block to `common/blocks` folder), so user will be able to edit block in eWizard.
+However, after completing the block development, it is recommended to add the block correctly(by copying the block to `common/blocks` folder), so user will be able to edit block in eWizard.
 :::
 
 ## Adding block in eWizard editir
