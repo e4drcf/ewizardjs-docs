@@ -2,9 +2,9 @@
 
 ## wiz-wrapper
  
-The basic component used to wrap the content of Email Template. The `wiz-wrapper` should be added as the root element of `<template>`. 
+The `wiz-wrapper` is a basic container component that is used to wrap the content of Email Template. The `wiz-wrapper` should be added as the root element of `<template>`. 
 
-Whenever user deletes all content from ET via eWizard `wiz-wrapper` remains the last, and cannot be removed. As result it rendered as container with image **Add content here**. The new elements may be added to that container again.
+Whenever user deletes all content from ET via eWizard `wiz-wrapper` remains the last and displays image **Add content here**.  The `wiz-wrapper` cannot be removed thus a new elements may be added to that container again.
 
 #### Usage
 ```html
@@ -117,7 +117,7 @@ The `wiz-layout` is a component that is used to lay out the content in a table. 
 Each item passed to the slot of `wiz-layout` is rendered in a row or column (which depends on `type` prop), so to create the complicated layouts may be used nested `wiz-layout`components with different `type` prop
 :::
 
-#### API
+#### Props
 
 | Prop     | Type       | Explanation                                 
 |----------|------------|-------------------------------------------
@@ -182,3 +182,7 @@ The grid prop is commonly used to manipulate the styles of multiple table cells 
 **Result**
 
 ![wiz-placeholder](../../media/images/wiz-layout.jpg)
+
+While creating the layout of ET it is preferred to use `wiz-layout` component rather than simple `table` tag. When user is tying to add any element to email in eWizard, `wiz-layout` automatically renders the table cells with a new content in direction determined by `wiz-layout` **type**
+
+Example:
