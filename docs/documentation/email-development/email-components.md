@@ -2,9 +2,9 @@
 
 ## wiz-wrapper
  
-The `wiz-wrapper` is a basic container component that is used to wrap the content of Email Template. The `wiz-wrapper` should be added as the root element of `<template>`. 
+The `wiz-wrapper` is a basic container component that is used to wrap the content of Email Template. The `wiz-wrapper` should be included in the root of email template. 
 
-Whenever user deletes all content from ET via eWizard `wiz-wrapper` remains the last and displays image **Add content here**.  The `wiz-wrapper` cannot be removed thus a new elements may be added to that container again.
+Whenever user deletes all content from ET via eWizard `wiz-wrapper` remains the last and displays image **Add content here**.  The `wiz-wrapper` cannot be removed and allows user to add new content to that container again.
 
 #### Usage
 ```html
@@ -15,7 +15,7 @@ Whenever user deletes all content from ET via eWizard `wiz-wrapper` remains the 
 </template>
 ```
 ::: tip
-The width and background colour of root element in ET are available for configuration in the `Settings` tab of eWizard editor.
+The width and background colour of ET root element are available for configuration in the `Settings` tab of eWizard editor.
 :::
 
 **Result**
@@ -86,7 +86,7 @@ The `wiz-placeholder` is a basic component that allows to create editable horizo
 
 ## wiz-column
 
-The `wiz-column` component is used in a pair with [`wiz-placeholder`](#wiz-placeholder) to group and display any type of content inside the columns. It is mandatory to nest `wiz-column` to `wiz-placeholder` if you are going to use them. The columns could be removed, added, resized in eWizard editor
+The `wiz-column` component is used in a pair with [`wiz-placeholder`](#wiz-placeholder) to group and display any type of content inside the columns. It is mandatory to nest `wiz-column` to `wiz-placeholder` if you are going to use it. The columns could be removed, added, resized in eWizard editor.
 
 #### API
 
@@ -94,9 +94,9 @@ The `wiz-column` has following props:
 
 | Prop     | Type     | Explanation                                 
 |----------|----------|-------------------------------------------
-| `width`  | _Number_ | defines the column width in percent. The sum of columns' width within one placeholder always equals to `100` percent 
-| `label`  | _String_ | defines the column label. Defaults to `Column`
-| `align`  | _String_ | specifies the alignment of the content horizontally. In order to set column alignment, the passed value is added to **align** attribute of the table cell, so the [possible values](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td#Attributes) are the same as **align** attribute of `table` has. Defaults to `center`											
+| `width`  | _Number_ | defines the column width in percent. The sum of columns' width within one placeholder always equals to `100` percent; 
+| `label`  | _String_ | defines the column label. Defaults to `Column`;
+| `align`  | _String_ | specifies the alignment of the content horizontally. In order to set column alignment, the passed value is added to **align** attribute of the table cell, so the [possible values](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td#Attributes) are the same as **align** attribute of `table` has. Defaults to `center`;							
 
 When the user change `width` of a column, component, emits `resize` event with a new width value of the column as payload.
 
@@ -114,18 +114,18 @@ When the user change `width` of a column, component, emits `resize` event with a
 The `wiz-layout` is a component that is used to lay out the content in a table. Each item in between the `wiz-layout` tags is distributed in the table cells. The `wiz-layout` cannot be selected directly for editing in eWizard.
 
 ::: tip 
-Each item passed to the slot of `wiz-layout` is rendered in a row or column (which depends on `type` prop), so to create the complicated layouts may be used nested `wiz-layout`components with different `type` prop
+Each item passed to the slot of `wiz-layout` is rendered in a row or column (which depends on `type` prop). To create complicated email template layouts use nested `wiz-layout`components with different `type`.
 :::
 
 #### Props
 
 | Prop     | Type       | Explanation                                 
 |----------|------------|-------------------------------------------
-| `type`   | _String_   | Indicates the direction of content layout. <br><br>`horizontal` - lay out all content in a single row (each item will be rendered in the same row as table cell). <br><br>`vertical` - lay out the content in a column (each item will be rendered in a new row as a table cell). Defaults to `vertical`.
+| `type`   | _String_   | Indicates the direction of content layout. <p>`horizontal` - lay out all content in a single row (each item will be rendered in the same row as table cell).</p><p>`vertical` - lay out the content in a column (each item will be rendered in a new row as a table cell). Defaults to `vertical`.</p>
 | `align`  | _String_	| Specifies how the cell content's horizontal alignment will be handled. Possible values are the same as [align](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td#Attributes) attribute has.
 | `width`  | _String_   | Specifies the width of `wiz-layout` itself
 | `css`	   | _Object_	| This prop may contain an object which is described according to vue [Object syntax](https://vuejs.org/v2/guide/class-and-style.html#Object-Syntax-1) that specifies style information of a `table` produced by `wiz-layout`. Styles described in `css` object are applied as table inline styles.
-| `grid`   | _String, Array_ | The property may contain an array of objects with style information of the table cells (each cell wraps `wiz-layout` item). Styles described in array' object are assigned to appropriate cell.
+| `grid`   | _String, Array_ | The property may contain an array of objects with style information of the table cells (each cell wraps `wiz-layout` item). Each objects with styles described from `grid` are assigned to appropriate `wiz-layout` cells.
 
 ::: tip
 The grid prop is commonly used to manipulate the styles of multiple table cells produced by `wiz-layout` component. Use it to specify layout of `wiz-layout` items by setting width, padding etc of table cells (which helps to create some sort of a grid) 
@@ -143,11 +143,8 @@ The grid prop is commonly used to manipulate the styles of multiple table cells 
 </i18n>
 
 <template>
-	<table class="container m-full-width" cellspacing="0" style="padding-top: 20px; padding-bottom: 20px;width: 600px">
-		<tr>
-			<td align="center">
-				<wiz-layout class="fragment content-2w border-collapse m-p-0 m-p-lr-20" :css="{minHeight: '20px'}" type="horizontal" :grid="layoutGrid">
-
+	<wiz-wrapper class="container" cellspacing="0" style="padding-top: 20px; padding-bottom: 20px;width: 600px">
+				<wiz-layout class="border-collapse" :css="{minHeight: '20px'}" type="horizontal" :grid="layoutGrid">
 					<!-- Main Content -->
 					<wiz-layout class="border-collapse" :css="{colour: 'red'}">
 						<wiz-text align="left" :text="$t('main_text')"></wiz-text>
@@ -157,32 +154,33 @@ The grid prop is commonly used to manipulate the styles of multiple table cells 
 						<wiz-text align="left" :text="$t('main_text')"></wiz-text>
 					</wiz-layout>
 					<!-- Main Content -->
-
 				</wiz-layout>
-			</td>
-		</tr>
 	</table>
 </template>
 
 <script>
     export default {
-        name: 'content-2w',
+        name: 'v-app',
 				data: function(){
 					return {
 							layoutGrid:[
-								{ paddingRight: "30px" },
+								{ paddingLeft: "30px" },
 								{ paddingRight: "20px" }
 							]
 						}
 					}
     }
 </script>
+
+<style>
+@import "common/styles/main.css";
+</style>
 ```
 
 **Result**
 
 ![wiz-placeholder](../../media/images/wiz-layout.jpg)
 
-While creating the layout of ET it is preferred to use `wiz-layout` component rather than simple `table` tag. When user is tying to add any element to email in eWizard, `wiz-layout` automatically renders the table cells with a new content in direction determined by `wiz-layout` **type**
+While creating the layout of ET it is preferred to use component `wiz-layout` rather than a simple `table` element. When user is tying to add any element to email in eWizard, `wiz-layout` automatically renders the table cells with a new content in direction determined by `wiz-layout` **type**.
 
-Example:
+![wiz-placeholder](../../media/images/wiz-layout-adding-item.gif)
