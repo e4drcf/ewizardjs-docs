@@ -1,7 +1,7 @@
 # Migration from vue-engine to eWizard.js
 
 ## Updating package.json file
-1. Delate dependencies “navigator”, “standard-monitoring”, “vue”, "vue-engine"
+1. Delate dependencies “navigator”, “standard-monitoring”, “vue”, "vue-engine", "init-editor"
 2. Add new dependency: 
 ```json
     "ewizardjs": git+https://git@git.qapint.com/ewizardjs/ewizardjs.git#3.0.0
@@ -44,12 +44,27 @@ import { Monitoring } from 'ewizardjs/monitoring';
 2. Create app.js file in the root folder
     <img src="../media/images/appjs.png" style="display:block; margin:auto; height:400px;"/>
 
-    - Move the imported plugins, components, modules from index.js to app.js. <strong>VueRouter and VueI18n leave in index.js file.<strong> 
+    - Move the imported plugins, components, modules from index.js to app.js. <b>VueRouter and VueI18n leave in index.js file.</b> 
+    - The structure shoud be created before the settings:
+        ```js
+        const structure = new Structure(structureJson);
+
+        const settings = getSettings(structure); // without "new" keyword
+        ```        
     - Add export function:
         ```js
         export function createAppComponent(Vue, router) {...}
         ```
         - Use plugins, components, modules, etc, through ```Vue.use```, ```Vue.component```
+            
+            <b>Example:</b>
+            ```js
+            Vue.use(NavigatorPlugin);
+
+            Vue.use(Touch, settings.navigation.swipe);
+
+            Vue.use(SettingsPlugin, { structure });
+            ```          
         - Create the router and navigator
             ```js
             const appRouter = new Router(structure, Vue, undefined, router);
