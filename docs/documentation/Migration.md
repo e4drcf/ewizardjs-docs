@@ -44,7 +44,7 @@ import { Monitoring } from 'ewizardjs/monitoring';
 2. Create app.js file in the root folder
     
     <img src="../media/images/appjs.png" style="display:block; margin:auto; height:400px;"/>
-
+    <br>
     - Move the imported plugins, components, modules from index.js to app.js. <b>VueRouter and VueI18n leave in index.js file.</b> 
     - The structure shoud be created before the settings:
         ```js
@@ -131,9 +131,8 @@ new Vue(Object.assign(options, {
 
 ## Examples
 
-https://git.qapint.com/ewizardjs/templates/edetailer/tree/master/template 
+[https://git.qapint.com/ewizardjs/templates/edetailer/tree/master/template](https://git.qapint.com/ewizardjs/templates/edetailer/tree/master/template)
 
-https://git.qapint.com/ewizard-presentations/default-vue/tree/feature/independent-editor
-
+[https://git.qapint.com/ewizard-presentations/default-vue/tree/feature/independent-editor](https://git.qapint.com/ewizard-presentations/default-vue/tree/feature/independent-editor)
 
 Update ewizard-cli to 0.2.5 from the [Git](https://git.qapint.com/ewizardjs/ewizard-cli).
