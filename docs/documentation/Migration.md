@@ -1,7 +1,7 @@
 # Migration from vue-engine to eWizard.js
 
 ## Updating package.json file
-1. Delate dependencies “navigator”, “standard-monitoring”, “vue”, "vue-engine", "init-editor"
+1. Delate “navigator”, “standard-monitoring”, “vue”, "vue-engine", "init-editor" from dependencies
 2. Add new dependency: 
 ```json
     "ewizardjs": git+https://git@git.qapint.com/ewizardjs/ewizardjs.git#3.0.0
@@ -42,6 +42,7 @@ import { Structure } from 'ewizardjs/structure';
 import { Monitoring } from 'ewizardjs/monitoring';
 ```
 2. Create app.js file in the root folder
+    
     <img src="../media/images/appjs.png" style="display:block; margin:auto; height:400px;"/>
 
     - Move the imported plugins, components, modules from index.js to app.js. <b>VueRouter and VueI18n leave in index.js file.</b> 
@@ -80,6 +81,9 @@ import { Monitoring } from 'ewizardjs/monitoring';
             The ```options``` field can be completed by any parameters, they will be transmitted to the ```new Vue``` object.
 
 
+
+
+<br><br>
 
 In ```index.js``` call the function from ```app.js``` file.
 ```js
@@ -127,7 +131,9 @@ new Vue(Object.assign(options, {
 
 ## Examples
 
-https://git.qapint.com/ewizardjs/templates/edetailer/tree/master/template https://git.qapint.com/ewizard-presentations/default-vue/tree/feature/independent-editor
+https://git.qapint.com/ewizardjs/templates/edetailer/tree/master/template 
+
+https://git.qapint.com/ewizard-presentations/default-vue/tree/feature/independent-editor
 
 
 Update ewizard-cli to 0.2.5 from the [Git](https://git.qapint.com/ewizardjs/ewizard-cli).
