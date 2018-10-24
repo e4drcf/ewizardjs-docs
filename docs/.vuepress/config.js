@@ -23,6 +23,7 @@ module.exports = {
           ['structure', 'Presentation structure'],
           'navigator',
           ['Settings','Settings'],
+          ['Migration','Migration'],
           {
             title: 'Email Development',
             collapasble: false,
