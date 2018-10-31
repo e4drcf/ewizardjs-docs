@@ -4,7 +4,7 @@
 1. Delate “navigator”, “standard-monitoring”, “vue”, "vue-engine", "init-editor" from dependencies
 2. Add new dependency: 
 ```json
-    "ewizardjs": git+https://git@git.qapint.com/ewizardjs/ewizardjs.git#3.0.0
+    "ewizardjs": "git+https://git@git.qapint.com/ewizardjs/ewizardjs.git#release/3.2.0"
 ```
 
 ## Updating App.vue file
