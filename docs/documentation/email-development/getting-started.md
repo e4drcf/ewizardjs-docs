@@ -34,10 +34,10 @@ By following these steps, you have created your basic email template. You can co
 
 While developing an email template you can use predefined parts of an email. They are divided into two types:
 
-* [blocks (fragments)](/documentation/email-development/blocks.html)
+* [blocks](/documentation/email-development/blocks.html)
 * components
 
-Blocks or fragments are already made sections of HTML page layout such as header, footer, etc. If you wondering how to add the block to email template check out to the [blocks documentation here](/documentation/email-development/blocks.html#adding-block-to-et). All installed blocks are described in *common/blocks-library/fragments.json* file.
+Blocks or fragments are already made sections of HTML page layout such as header, footer, etc. If you wondering how to add the block to email template check out to the [blocks documentation here](/documentation/email-development/blocks.html#adding-block-to-et). All installed blocks are described in *common/blocks-library/blocks.json* file.
 
 <img src="../../media/images/blockExample.png" alt="blockExample" style="display: block; margin: 0 auto;">
 
