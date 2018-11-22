@@ -63,6 +63,26 @@ The main file with common styles is located in *common/styles/main.css* file. Th
 Another way to [style blocks](./blocks.html#block-styling) - do it directly in the code of the specific added block. For this, paste a **style** tag in the index.vue file of that block and write a css code inside of it. Use the **scoped** attribute for applying the CSS to elements of the current block only.
 
 
+## Conditional comments
+
+Microsoft’s Outlook desktop email clients supports [conditional comments](https://www.sitepoint.com/internet-explorer-conditional-comments/) that are used to display specific HTML in target  client version. By default, *vue-loader* strip out all HTML comments from the *vue* components. In order to  preserve comments after the ET compilation it is required to add [`comments`](https://github.com/vuejs/vue-loader/pull/897) attribute to the component `template` tag.
+
+*Example:*
+
+```html{1}
+<template comments>
+	<wiz-layout class="content-wrapper" style="border-spacing: 0; background: #ffffff; table-layout: auto" align="center">
+		<div>
+		<!--[if gte mso 15]>
+		/* YOUR CODE HERE */
+		<![endif]-->	
+		</div>
+	</wiz-layout>
+</template>
+```
+*Result*
+
+<img src="../../media/images/condtional-comments-result.jpg" alt="editMode " style="display: block; margin: 0 auto;">
 
 
 
