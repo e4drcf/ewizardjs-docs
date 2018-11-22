@@ -9,7 +9,7 @@ features:
   details: Usage of Vue.js framework simplifies the content creation.
 - title: Performant
   details: Great performance of every e-Detailer created with the use of eWizard.js.
-footer: MIT Licensed | Copyright © 2018-present Evan You
+footer: Viseven Digital Content Factory | Copyright © 2018
 ---
 
 # eWizard.js
