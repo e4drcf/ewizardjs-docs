@@ -80,7 +80,7 @@ Microsoft’s Outlook desktop email clients supports [conditional comments](http
 	</wiz-layout>
 </template>
 ```
-*Result*
+*Result:*
 
 <img src="../../media/images/condtional-comments-result.jpg" alt="editMode " style="display: block; margin: 0 auto;">
 
