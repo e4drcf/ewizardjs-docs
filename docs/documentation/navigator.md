@@ -252,4 +252,3 @@ Note that you can create the flow within already created one and fill it with an
 ## Open pdf method
 
 To open the pdf in CLM compatible format use `openPdf(path)` method, where `path` -  path to the pdf file, type `String`.
-

@@ -2,7 +2,7 @@
 
 ## Open pdf directive
 
-This directive uses navigator's method [openPdf()](./navigator.html#open-pdf-method) to open the pdf in CLM compatible format.
+This directive uses navigator's method [openPdf](./navigator.html#open-pdf-method) to open the pdf in CLM compatible format.
 
 **Installation**
 
@@ -13,6 +13,8 @@ wiz install --save wiz-open-pdf
 ```
 
 To specify the dependency for the component open the package.json and add:
+
+To specify the dependency for the component open the package.json and add the following string:
 
 ```bash
 "wiz-open-pdf": git+https://git.qapint.com/ewizardjs/edetailer/components/wiz-open-pdf.git#VERSION
