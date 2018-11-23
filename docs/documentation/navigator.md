@@ -14,14 +14,6 @@ this.$navigator
 
 To set up the Navigator module use presentation [settings.json](Settings.html) file, that stores navigation gesture settings.
 
-### Cross chapter swipe
-
-By default the transition between the chapters by navigation gestures is disabled. To enable it set `crossChapterSwipe` as `true`.
-
-`settings.json` file:
-```js
-"crossChapterSwipe": true
-```
 
 ### Swiping configuration
 
@@ -119,7 +111,7 @@ Either of `gotTo*` methods accepts as an argument the `force` value:
 
 - **`force`** _(Boolean)_ - specifies if the navigation lock should be ignored. Defaults to **false**
 
-The force option can be useful if the navigation to neighboring slide is [locked](#locking-the-navigation) (or cross chapter swipe is not allowed), but you still need to execute navigation to this slide.
+The force option can be useful if the navigation to neighboring slide is [locked](#locking-the-navigation), but you still need to execute navigation to this slide.
 
 **Example:**
 
