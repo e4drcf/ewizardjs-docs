@@ -243,22 +243,6 @@ export default {
 
 To check the results run `wiz dev` command in the root of **ET** folder and open `./index.html` file in any browser.
 
-:::tip
-For develop purposes only, you can import the block' template directly from the blocks-library as below:
-
-```js
-import myBlock from "./common/blocks-library/my-block/index.vue";
-export default {
-  name: "v-app",
-  components: {
-    myBlock
-  }
-};
-```
-
-However, after completing the block development, it is recommended to add the block correctly (by copying the block to `common/blocks` folder), so user will be able to edit block in eWizard.
-:::
-
 ## Adding block in eWizard editor
 
 To add the new blocks to email, switch left sidebar to the `Blocks` tab and drag the block to the required position in email.
