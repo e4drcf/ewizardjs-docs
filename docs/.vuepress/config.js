@@ -21,8 +21,9 @@ module.exports = {
           'attributes',
           'component',
           ['structure', 'Presentation structure'],
-          'navigator',
-          ['Settings','Settings'],
+          ['Settings','Presentation settings'],
+          ['navigator', 'Navigator module'],
+          ['Settings-plugin', 'Settings module'],
           ['Directives','Directives'],
           ['Migration','Migration'],
           {
