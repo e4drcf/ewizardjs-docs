@@ -18,6 +18,7 @@ module.exports = {
           '',
           ['Installation','Installation'],
           ['Getting-started','Getting started'],
+          ['CLI-commands','CLI-commands'],
           'attributes',
           'component',
           ['structure', 'Presentation structure'],

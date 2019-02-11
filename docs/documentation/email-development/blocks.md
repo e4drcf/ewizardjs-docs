@@ -217,11 +217,13 @@ If you are going to add any block from the block library to **ET** markup, just 
 
 Then add the tag which corresponds block component name to **ET** markup:
 
-```html{3}
+```html{4}
 <template>
-  <wiz-layout class="content-wrapper" style="border-spacing: 0; background: #ffffff; table-layout: auto" align="center">
-    <my-block></my-block>
-  </wiz-layout>
+  <div align="center">
+    <wiz-layout class="content-wrapper" style="border-spacing: 0; background: #ffffff; table-layout: auto" align="center">
+      <my-block></my-block>
+    </wiz-layout>
+  </div>
 </template>
 
 <script>
