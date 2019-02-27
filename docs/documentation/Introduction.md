@@ -8,7 +8,7 @@ eWizard CLI empowers flexible and universal eDetailing development from scratch 
 
 ## What is the eWizard presentation?
 
-The eWizard presentation is an HTML project just like any other website. The only difference is that the eWizard presentation has a file structure compatible with eWizard builds, therefore it can be built by them for all supported platforms. The eWizard presentation is an HTML project which uses component approach to simplify a development process. The big advantage of using components is that you can add a new functionality to the presentation by installing them. The Component is a ready-for-use unit which you can integrate to the presentation. Components are developed independently from the projects where they are used. This means, that all fixes and improvements in components can be brought to your project only by updating components (normally, it's done with one console command). Since browsers don't support the component approach, at first the presentation needs to be built.
+The eWizard presentation is an HTML project just like any other website. The only difference is that the eWizard presentation has a file structure compatible with eWizard builds, therefore it can be built by them for all supported platforms. The eWizard presentation is an HTML project which uses a component approach to simplify a development process. The big advantage of using components is that you can add new functionality to the presentation by installing them. A Component is a ready-for-use unit which you can integrate to the presentation. Components are developed independently from the projects where they are used. This means, that all fixes and improvements in components can be brought to your project only by updating components (normally, it's done with one console command). Since browsers don't support the component approach, at first the presentation needs to be built.
 
 ## What is a build
 
@@ -16,23 +16,23 @@ A build is a part of the eWizard CLI technology which transforms presentation so
 
 ## The Develop build
 
-During the presentation development you will use the develop build. This is the fastest build and it's used to preview the presentation in browser. The develop build is part of eWizard CLI and is done locally on your machine. To run the develop build we use the `wiz dev` command.
+During the presentation development you will use the develop build. This is the fastest build and it's used to preview the presentation in the browser. The develop build is part of eWizard CLI and is done locally on your machine. To run the develop build we use the `wiz dev` command.
 
 You can read more about develop build commands in section `CLI commands`.
 
 ## The Production build
 
-The Production build transforms the presentation for the CLM of your choice and is done on a server. A built presentation can be downloaded from your eWizard account (click on details of your presentation and download an appropriative build). Also, you can download a build via eWizard CLI - just run the '' command to get the list of recent builds, then find the ID of the build you want to download and run ''. A downloaded archive can be uploaded to the CLM afterwards. eWizard provides integration with some CLMs which make it possible to publish the presentation to the CLM directly.
+The Production build transforms the presentation for the CLM of your choice and is done on a server. A built presentation can be downloaded from your eWizard account (click on details of your presentation and download an appropriative build). Also, you can download a build via eWizard CLI - just run the '' command to get the list of recent builds, then find the ID of the build you want to download and run ''. A downloaded archive can be uploaded to the CLM afterward. eWizard provides integration with some CLMs which make it possible to publish the presentation to the CLM directly.
 
 Read more about production build commands in section `CLI commands`.
 
 ## Presentation development tools
 
-eWizard CLI are used for an automatic content creation, also you can choose any IDE for editing files created with eWizard CLI. For editing the presentation visually use convenient eWizard CLI editor.
+eWizard CLI is used for automatic content creation, also you can choose any IDE for editing files created with eWizard CLI. For editing the presentation visually use convenient eWizard CLI editor.
 
 ## Approximate workflow
 Creating the presentation with eWizard CLI.
 Creating the presentation structure (add slides and chapters) filling slides with the content using your IDE.
 Uploading presentation to eWizard platform and make some changes there.
 Exporting presentation from eWizard and continuing development by usage of eWizard CLI and IDE.
-Building your presentation, which is ready for production, on eWizard server using the eWizard CLI command or do it from eWizard platform.
+Building your presentation, which is ready for production, on the eWizard server using the eWizard CLI command or do it from the eWizard platform.

@@ -33,7 +33,7 @@ Let's consider the example:
 Here, keys `vanilaCookie`, `chocolateCookie` and `biscuit` specifies the ID of the slides, each object has `name` property which will be displayed as slide name in eWizard editor, and `template` with the path to vue component that represents a presentation page.
 
 ::: tip
-If there is a need to create several slides with use of same vue component, they should have different IDs, but same `template` value.
+If there is a need to create several slides with use of same vue component, they should have different IDs, but the same `template` value.
 :::
 
 
@@ -85,7 +85,7 @@ eWizardjs counts chapters that are not included in `storyboard` as a hidden. It 
 
 ### Disabled slides and chapters.
 
-Slides and chapters can be skipped during viewing a presentation. To mark the slide or chapter as disabled, inside the chapters' <code>content</code> (to disable the slide) or `storyboard` (to disable the chapter) add the `!` symbol in front of desirable item.
+Slides and chapters can be skipped during viewing a presentation. To mark the slide or chapter as disabled, inside the chapters' <code>content</code> (to disable the slide) or `storyboard` (to disable the chapter) add the `!` symbol in front of the desirable item.
 
 *Example*
 

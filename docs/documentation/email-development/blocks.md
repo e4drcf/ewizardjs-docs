@@ -23,7 +23,7 @@ By default, the initialized **ET** project (created by `wiz init` command) alrea
 
 All these blocks are taken from the `common/blocks-library/` folder and serve as templates. Once user added the block to **ET**, the block component is being copied from the `blocks-library/` to `blocks/` folder.
 
-The `blocks-library` and `blocks` folders have the structure as bellow:
+The `blocks-library` and `blocks` folders have the structure as below:
 
 ```bash
 .
@@ -55,7 +55,7 @@ The block itself is represented as a simple vue component and described in `inde
 
 Let's try to create our first custom block component.
 To do so, create a folder `my-block` within `common/blocks-library/` folder.
-The markup of block should be added to `index.vue` file within `template` tag. So, we should create `index.vue` file within `my-block` and add the preceeding code:
+The markup of the block should be added to `index.vue` file within `template` tag. So, we should create `index.vue` file within `my-block` and add the preceding code:
 
 <div class="container-scrollable">
 
@@ -106,7 +106,7 @@ To see the result [add the block commponent to **ET** markup](#adding-the-block-
 
 To style the block component add `<style>` tag into its `index.vue` file and define there `css` code to fit the block content your design. It is a common practice to make a stylesheet with commonly used `css` classes and reuse them while developing the custom blocks.
 
-Upon the necessity CSS code may be inlined in the HTML elements.
+Upon the necessity, CSS code may be inlined in the HTML elements.
 
 <div class="container-scrollable">
 
@@ -201,7 +201,7 @@ Each block from the `blocks-library` should be described as an object in `compon
 ]
 ```
 
-Each object in metadata is rendered as a new string with helpful information, that appears when the user moves the mouse pointer over a block in sidebar. That information may help user to understand which type of content block has and to find out the content description and properties.
+Each object in metadata is rendered as a new string with helpful information, that appears when the user moves the mouse pointer over a block in the sidebar. That information may help the user to understand which type of content block has and to find out the content description and properties.
 
 As a result, the following sidebar tooltip of `my-block` may appear:
 

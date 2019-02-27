@@ -122,7 +122,7 @@ This code shows the default setting for created edetailer template.
   }
 }
 ```
-The survey's settings are similar to the edetailer settings, so there is no reason to describe them.  
+The survey's settings are similar to edetailer settings, so there is no reason to describe them.  
 
 
 

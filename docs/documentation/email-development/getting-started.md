@@ -65,7 +65,7 @@ Another way to [style blocks](./blocks.html#block-styling) - do it directly in t
 
 ## Conditional comments
 
-Microsoft’s Outlook desktop email clients supports [conditional comments](https://www.sitepoint.com/internet-explorer-conditional-comments/) that are used to display specific HTML in target  client version. By default, *vue-loader* strip out all HTML comments from the *vue* components. In order to  preserve comments after the ET compilation it is required to add [`comments`](https://github.com/vuejs/vue-loader/pull/897) attribute to the component `template` tag.
+Microsoft’s Outlook desktop email clients support [conditional comments](https://www.sitepoint.com/internet-explorer-conditional-comments/) that are used to display specific HTML in target client version. By default, *vue-loader* strip out all HTML comments from the *vue* components. In order to preserve comments after the ET compilation it is required to add [`comments`](https://github.com/vuejs/vue-loader/pull/897) attribute to the component `template` tag.
 
 *Example:*
 

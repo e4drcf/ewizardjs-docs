@@ -45,7 +45,7 @@ eWizard CLI commands could be divided into a few groups depending on their purpo
 
 ## Authentification commands
 
-These commands will help you to log in and logout from the platform. Since eWizard platform and eWizard CLI are strongly connected, you can log in through CLI and then proceed working in eWizard platform without any extra efforts for log in.
+These commands will help you to log in and logout from the platform. Since eWizard platform and eWizard CLI are strongly connected, you can log in through CLI and then proceed to work in eWizard platform without any extra efforts for log in.
 
 <figure class="highlight bash">
     <pre class="code">$ wiz login [options]</pre>
@@ -67,11 +67,11 @@ This command is dedicated for login to the system. As a result, after executing 
 
 This command does not have any additional parameters.
 
-This command is dedicated for log out of the system. The next time, when you will try to perform any operations, you will be warned that you are not logged in.
+This command is dedicated to logging out of the system. The next time, when you will try to perform any operations, you will be warned that you are not logged in.
 
 ## eDetailing development commands
 
-The following commands are dedicated to ease the actual development of any eDetailing content (e-mails, presentations, survey, etc). They provide possibilities for automation content creation.
+The following commands are dedicated to easing the actual development of any eDetailing content (e-mails, presentations, survey, etc). They provide possibilities for automation content creation.
 
 -------------------------------------
   <figure class="highlight bash">

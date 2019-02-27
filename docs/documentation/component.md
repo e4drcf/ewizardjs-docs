@@ -26,7 +26,7 @@
 ## Component development guidelines
 
 1. Follow **official** Vue [guidelines](https://vuejs.org/v2/guide/components.html)
-2. Add `wiz-component-name` class to the root element of component
+2. Add `wiz-component-name` class to the root element of the component
 3. Define props according to ewizardjs guidelines
 
 ## Creating a component
@@ -47,9 +47,9 @@ Follow this [process](https://confluence.viseven.com/display/CCD/Process+of+deve
 
 ## Interactive Components
 
-In the case when a component changes its own state it should notify external world about those updates.
+In the case when a component changes its own state it should notify the external world about those updates.
 
-It makes it possible to subscribe in a parent component for child's component data changes.
+It makes it possible to subscribe to a parent component for child's component data changes.
 
 Vue defines a special mechanism for it via modifier .sync.
 
@@ -62,7 +62,7 @@ This means that every component that modifies its data **must emit event `update
 
 ## Component properties standard (index.vue)
 
-Vue allows to define component [props](https://vuejs.org/v2/guide/components-props.html) in a several ways. As a standard ewizardjs use component props defined as object.
+Vue allows to define component [props](https://vuejs.org/v2/guide/components-props.html) in several ways. As a standard ewizardjs use component props defined as an object.
 
 Props object should look like this:
 
@@ -188,12 +188,12 @@ Props object should look like this:
 Aside to well known vue properties for [type check](https://vuejs.org/v2/guide/components-props.html#Type-Checks) or [validation](https://vuejs.org/v2/guide/components-props.html#Prop-Validation) etc, ewizardjs use additional fields for props declaration, to fit them for editing in eWizard.
 
 According to the preceding example, the component Prop may be described with the following fields:
-- `label` - specifies the label of component in ewizardjs editor
+- `label` - specifies the label of the component in ewizardjs editor
 - `type` - contains the type of Prop according to the javascript native data types
 - `actualType` - specifies the type of Prop according to the [PropType](#component-types-prop-types) list
 - `subtype` - specifies the of Prop subtype in case of the usage more complex actual types such as `File`and `Array`. When use  `File`as `actualType`, subtype can be set to one of [FileType](#component-types-prop-types) values. In case of usage [Array]() as actual type, `subtype` contains the object with a description of each Prop to be passed like array.
- - `options` - contains a list of available options that may be selected as value of the Prop. Each option nested in the `options` is displayed in eWizard editor in drop down list.
- - `default` - specifies default value of the Prop if the value wasn't passed
+ - `options` - contains a list of available options that may be selected as the value of the Prop. Each option nested in the `options` is displayed in eWizard editor in drop-down list.
+ - `default` - specifies the default value of the Prop if the value wasn't passed
 
 ### Component types
 
@@ -231,10 +231,10 @@ The supplemental values of `subtype` in case of use `File` as a `actualType` are
 
 ## eWizard Component properties and Localization Standard
 
-To define more advanced configuration of component properties create `ewizard.config.js` file in root of component project folder.
+To define more advanced configuration of component properties create `ewizard.config.js` file in the root of the component project folder.
 
 `ewizard.config.js` is a manifest which describes component props in a format that is used by eWizard to render them in a sidebar.
-This object is mixined with compopnent props. 
+This object is mixined with component props. 
 
 Language code for labels should be in iso3 format (eng, deu, ukr).
 
@@ -347,7 +347,7 @@ export default {
 ```
 </div>
 
-`ewizard.config.js` file should be included to the component instance
+`ewizard.config.js` file should be included in the component instance
 ```js
 
 import ewizardConfig from  './ewizard.config';

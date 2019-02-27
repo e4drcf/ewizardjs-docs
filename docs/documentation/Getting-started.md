@@ -4,7 +4,7 @@ In this part of the tutorial you will learn how to:
 * add editable text
 * use different components on a slide
 
- As a result you will have presentation with images, eWizard components and animation withing slides. As this is a brief tutorial, all advanced functionalities will be described further.
+ As a result, you will have a presentation with images, eWizard components, and animation within slides. As this is a brief tutorial, all advanced functionalities will be described further.
 
 ## Presentation creation
 
@@ -14,7 +14,7 @@ Open the command line in `first-presentation` folder and run the following comma
 
 `wiz login`
 
-This command allows you to get access to all the opportunities/functionalities for creating e-detailing content properly. As a result, after executing this command eWizard's Login page will be opened in browser while console will be switched to the waiting mode.
+This command allows you to get access to all the opportunities/functionalities for creating e-detailing content properly. As a result, after executing this command eWizard's Login page will be opened in the browser while console will be switched to the waiting mode.
 
 
 ```bash
@@ -28,7 +28,7 @@ PS C:\Users\default-user\Desktop>
 
 ![An image](../media/images/login-page.png)
 
-In case it is not possible to open browser from the console, you need to do it manually, an appropriate URL will be outputted in console.
+In case it is not possible to open the browser from the console, you need to do it manually, an appropriate URL will be outputted in the console.
 After successful login, you can close a browser and continue working with eWizard CLI:
 ![An image](../media/images/ewizard-cli.png)
 
@@ -36,7 +36,7 @@ Now we need to create a presentation, i.e. files and folders for presentation an
 
 `wiz init`
 
-We will be asked some additional questions about settings of the project: template you want to use (email, edetailer, survey or component), usage of ESLing, description, name and author of the project. Let's choose project type `edetailer` and all other settings leave by default. In result we will get a presentation with one chapter - `main` and one slide `cobalt`.
+We will be asked some additional questions about settings of the project: template you want to use (email, edetailer, survey or component), usage of ESLing, description, name and author of the project. Let's choose project type `edetailer` and all other settings leave by default. In result, we will get a presentation with one chapter - `main` and one slide `cobalt`.
 
 After initializing a presentation we can get familiar with the folder structure. Let's open a folder with a presentation in any IDE you want. The folder structure will look like the following one:
 
@@ -44,11 +44,11 @@ After initializing a presentation we can get familiar with the folder structure.
 
 As you see, the `wiz init` command has created a few folders in the root of your presentation and a lot more inside them. We will look into all of them in details in the next articles.
 
-Congratulations, you created a one-slide presentation! Read on to find out more about the content development.
+Congratulations, you created a one-slide presentation! Read on to find out more about content development.
 
 ## Project running
 
-To see how the presentation looks in a browser run the `wiz dev --watch` command in the presentation root folder. It will continuously build project source files, so we will be able to see the changes in browser without refreshing browser page. After that you should open the folder with a project using any local server you want: nginx, apache, e.t.c
+To see how the presentation looks in a browser run the `wiz dev --watch` command in the presentation root folder. It will continuously build project source files, so we will be able to see the changes in the browser without refreshing browser page. After that you should open the folder with a project using any local server you want: nginx, apache, e.t.c
 
 ## Adding basic html content and styles
 
@@ -56,9 +56,9 @@ Now let's go back to the IDE and open index.vue file (the first slide) which you
 
 As you can see, it is .vue file. Also, you may notice that some content is already present on a slide, it is automatically added by the engine. Tag `<wiz-text :text="$t('text')"></wiz-text>` which is placed inside <template></template> tag represents a string of text which is stated in `text` property of `en` object. Note that <template></template> is a tag where all the slide content should be placed, this tag should be the only one in the file and could not be removed.
 
-Let's slightly change the greeting text to check editability of our presentation. For such purpose, we should change value of `text` property to "Hello World", for example. Since we have run `wiz dev --watch` command previously, it will automatically build edited files.
+Let's slightly change the greeting text to check the editability of our presentation. For such purpose, we should change the value of `text` property to "Hello World", for example. Since we have run `wiz dev --watch` command previously, it will automatically build edited files.
 
-In browser the slide should look as the following:
+In the browser the slide should look as the following:
 
 ![Image](../media/images/hello-world.png)
 
@@ -85,9 +85,9 @@ export default {};
 <style scoped></style>
 ```
 
-Now, let's change the content formatting. As you may noticed, styles for the particular slides should be described in the same file with the markup. However, if needed to apply style changes which should affect the whole presentation it is better to define them in `styles/main.css` file.
+Now, let's change the content formatting. As you may notice, styles for the particular slides should be described in the same file with the markup. However, if needed to apply style changes which should affect the whole presentation it is better to define them in `styles/main.css` file.
 
-Getting back to content formating, let's change the background of the slide together with the size and color of the text, so the CSS will look as the following:
+Getting back to content formatting, let's change the background of the slide together with the size and color of the text, so the CSS will look like the following:
 
 ```css
 .layout{
@@ -105,15 +105,15 @@ After implementing above mentioned changes slide appearance will be the next:
 
 ![image](../media/images/edited-css.png)
 
-The next step is adding media files (images, videos, fonts, PDFs, etc.). They have to be placed in the `slides/{slideName}/media` folder. The images for the specific slide are stored in `media` folder which is situated in slide directory. However, if you want to use the same image on every slide, you should store it in `common/media/images` to reduce the size of the project. 
+The next step is adding media files (images, videos, fonts, PDFs, etc.). They have to be placed in the `slides/{slideName}/media` folder. The images for the specific slide are stored in the `media` folder which is situated in slide directory. However, if you want to use the same image on every slide, you should store it in `common/media/images` to reduce the size of the project. 
 
-Since we want to use the image only on the first slide, let's add it to `slides/default/media` folder. After that, we can easily add an image to the slide markup with the use of standard HTML5 syntax. Further we will learn how to use eWizard components instead standard tags to improve editing possibilities.
+Since we want to use the image only on the first slide, let's add it to `slides/default/media` folder. After that, we can easily add an image to the slide markup with the use of standard HTML5 syntax. Further, we will learn how to use eWizard components instead of standard tags to improve editing possibilities.
 
 ```HTML
   <img :src = "doctorImage" alt="" style="width:400px;height:250px">
 ```
 
-This is a standard HTML tag but with slightly different `src` attribute. This attribute is written with the use of Vue syntax in order to use object instead of string paths to the images. Hence, to make our slide work, we should import the image to the slide and assign it to the doctorImage object:
+This is a standard HTML tag but with slightly different `src` attribute. This attribute is written with the use of Vue syntax in order to use the object instead of string paths to the images. Hence, to make our slide work, we should import the image to the slide and assign it to the doctorImage object:
 
 ```JS
 <script>
@@ -129,7 +129,7 @@ This is a standard HTML tag but with slightly different `src` attribute. This at
 </script>
 
 ```
-Note, do not forget to put an existing image in appropriate folder, to make the code work.
+Note, do not forget to put an existing image in the appropriate folder, to make the code work.
 
 Now, let's add some interactivity to our slide - install `wiz-flip` component to the presentation. Just run the command `wiz install wiz-flip` in the root project folder. You may need to stop the `wiz dev --watch` command, in such case just press Ctrl + C twice. Next thing we should do -link the component on a slide - just add the following string inside the script tag:
 
@@ -155,7 +155,7 @@ The next thing we should paste the wiz-component into slide's markup, right afte
 						type="vertical"
 						class="flip"></wiz-flip>
 ```
-In further articles we will describe how to change every of the component attributes, but for now let's do not dive into the,.
+In further articles we will describe how to change every of the component attributes, but for now, let's do not dive into them.
 
 Finally, we need to slightly modify the default styling of `wiz-flip` component and remove yellow background:
 
@@ -174,13 +174,13 @@ Finally, we need to slightly modify the default styling of `wiz-flip` component 
 ```
 Note, if you want to stylize some component, you should use css-class as a selector instead of original tag - it is our framework feature.
 
-In browser, result will be the following:
+In the browser, the result will be the following:
 
 ![image](../media/images/component+doctor_image.png)
 
 Now, let's embed doctor image into `wiz-flip` component to use the component functionalities in full. Also, let's change slide styling and add a new string of text to the slide to make it more production-ready.
 
-It is better to start from adding new string of text, let's name it `doctorsName` and add to `en` object:
+It is better to start from adding a new string of text, let's name it `doctorsName` and add to `en` object:
 
 ```JSON
 
@@ -193,7 +193,7 @@ It is better to start from adding new string of text, let's name it `doctorsName
 
   ```
 
-The next thing, we need to do is to change the markup. It will be looking as the following one:
+The next thing, we need to do is to change the markup. It will be looking at the following one:
 
 ```HTML
 <template>
@@ -220,7 +220,7 @@ The next thing, we need to do is to change the markup. It will be looking as the
   </div>
 </template>
 ```
-As you can see there are a lot of nested tags inside of `<wiz-flip></wiz-flip>` tag. If we open `node_modules/wiz-flip/index.vue` file,we will see the template of the component and inside it we can find `<slot>` tag with some ids. Due to these tags we are able to paste any other tags inside the component, particularly div blocks and inside of them we can paste any other wiz components.
+As you can see there are a lot of nested tags inside of `<wiz-flip></wiz-flip>` tag. If we open `node_modules/wiz-flip/index.vue` file, we will see the template of the component and inside it, we can find `<slot>` tag with some ids. Due to these tags, we are able to paste any other tags inside the component, particularly div blocks and inside of them we can paste any other wiz components.
 
 Finally, we need to add a few CSS rules to make the styling more user-friendly:
 

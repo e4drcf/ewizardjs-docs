@@ -52,7 +52,7 @@ In the preceding example is defined horizontal navigation by slides (performed o
 
 ## Navigator' hooks
 
-- **`onbeforeenter(handler, options)`** - register  subscriber function which is executed each time when `onbeforeenter` event occurs. The `onbeforeenter` is published right after user opens a slide, before start of slides` transition animation. 
+- **`onbeforeenter(handler, options)`** - register subscriber function which is executed each time when `onbeforeenter` event occurs. The `onbeforeenter` is published right after user opens a slide, before start of slides` transition animation. 
 
 - **`onenter(handler, options)`** - register subscriber function which is executed each time when `slideenter` event occurs. The `slideenter` is published when user has opened the slide on transition end.
 
@@ -201,7 +201,7 @@ mounted(){
 
 ## Flow
 
-The presentation structure can not be modified whenever user view the slide. So to change the slide`s ordering in presentation can be used custom flow. Custom flow allows to create new demonstration flow dynamically by reusing the existing slides. That's mean during the presentation will be available only the slides from the new flow.
+The presentation structure cannot be modified whenever user view the slide. So to change the slide`s ordering in presentation can be used custom flow. Custom flow allows to create new demonstration flow dynamically by reusing the existing slides. That's mean during the presentation will be available only the slides from the new flow.
 
 Navigator provides the set of methods to work with flows such as:
 
@@ -216,10 +216,10 @@ Navigator provides the set of methods to work with flows such as:
 
 ---
 
-- **`resetFlow()`** - removes the current flow and defines the previous one as a current. If the previous flow do not exist, will be used structure.json file
+- **`resetFlow()`** - removes the current flow and defines the previous one as current. If the previous flow does not exist, will be used structure.json file
 - **`reset()`** - removes the current flow and defines the presentation structure as a current flow
 
-Note that you can create the flow within already created one and fill it with another slides. In this case you can back the previous flow by using `resetFlow` method.
+Note that you can create the flow within already created one and fill it with other slides. In this case you can back the previous flow by using `resetFlow` method.
 
 **Example**
 
